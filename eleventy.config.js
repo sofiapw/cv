@@ -18,6 +18,9 @@ module.exports = function(eleventyConfig) {
   // Ignore the numbered markdown files (they're included via shortcode)
   eleventyConfig.ignores.add("./[0-9]*.md");
 
+  // Ignore CLAUDE.MD documentation file
+  eleventyConfig.ignores.add("./CLAUDE.MD");
+
   return {
     dir: {
       input: ".",
