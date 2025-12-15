@@ -176,3 +176,4 @@ When modifying this project:
 7. Maintain the professional tone appropriate for a CV/resume
 8. **When done with changes, always kill any running Eleventy servers first, then start the dev server and open the site for the user**
 9. Check for running background processes before starting new ones to avoid port conflicts
+10. **Always push to GitHub after saving (creating a commit) to keep the remote repository in sync**
