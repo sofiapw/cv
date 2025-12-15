@@ -1,0 +1,3 @@
+# GENERAL SKILLS
+
+Bilingual and biliterate (English/Spanish), intermediate (JLPT N3) written Japanese Language, advanced spoken Japanese Language, translation and interpretation. Project management, system analysis and problem-solving, spatial analysis and problem-solving, teamwork, teaching, mentorship and leadership, customer service, public relations, creative theory, and seminar speaking.

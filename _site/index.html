@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sofia Penabaz-Wiley, Ph.D. - Curriculum Vitae</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Professional green palette inspired by ethnobotany & landscape */
+      --color-primary: #1a3c34;        /* Deep forest green */
+      --color-secondary: #2d5a4a;      /* Rich moss green */
+      --color-accent: #4a7c6f;         /* Sage accent */
+      --color-accent-light: #6b9d8f;   /* Light sage */
+      --color-highlight: #8fbc8f;      /* Soft botanical green */
+      --color-text: #2c3830;           /* Dark green-gray text */
+      --color-text-light: #5a6b62;     /* Muted green-gray */
+      --color-border: #d4ddd8;         /* Soft green-gray border */
+      --color-bg: #f7faf8;             /* Very subtle green-white */
+      --color-bg-alt: #ffffff;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--color-text);
+      background: var(--color-bg);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+      color: white;
+      margin-bottom: 0;
+      position: relative;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-highlight) 0%, var(--color-accent-light) 50%, var(--color-highlight) 100%);
+    }
+
+    header h1 {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    nav {
+      background: var(--color-bg-alt);
+      border-bottom: 1px solid var(--color-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1rem 0;
+      box-shadow: 0 2px 8px rgba(26, 60, 52, 0.06);
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem 2rem;
+      list-style: none;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    nav a {
+      color: var(--color-text-light);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.5rem 0;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--color-primary);
+      border-bottom-color: var(--color-accent);
+    }
+
+    main {
+      background: var(--color-bg-alt);
+      box-shadow: 0 4px 20px rgba(26, 60, 52, 0.08);
+      border-radius: 0 0 8px 8px;
+    }
+
+    section {
+      padding: 3rem 3rem;
+      border-bottom: 1px solid var(--color-border);
+      position: relative;
+    }
+
+    section:last-child {
+      border-bottom: none;
+    }
+
+    h1 {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      color: var(--color-primary);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 3px solid var(--color-accent);
+      display: inline-block;
+      position: relative;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 40%;
+      height: 3px;
+      background: var(--color-highlight);
+    }
+
+    h2 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--color-secondary);
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+
+    section > h2:first-child,
+    h1 + h2 {
+      margin-top: 0;
+    }
+
+    h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+
+    li::marker {
+      color: var(--color-accent);
+    }
+
+    a {
+      color: var(--color-accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    a:hover {
+      border-bottom-color: var(--color-accent);
+    }
+
+    strong {
+      font-weight: 600;
+      color: var(--color-secondary);
+    }
+
+    em {
+      color: var(--color-text-light);
+      font-style: italic;
+    }
+
+    .experience-entry h2 {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .date {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--color-accent);
+    }
+
+    .location {
+      font-weight: 400;
+      color: var(--color-text-light);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2.5rem 2rem;
+      color: var(--color-text-light);
+      font-size: 0.85rem;
+      background: var(--color-bg);
+      border-top: 1px solid var(--color-border);
+    }
+
+    /* Subtle accent bar on left of sections */
+    section::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 3rem;
+      bottom: 3rem;
+      width: 3px;
+      background: linear-gradient(180deg, var(--color-highlight) 0%, var(--color-accent-light) 50%, transparent 100%);
+      opacity: 0.4;
+      border-radius: 0 2px 2px 0;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 0.9rem;
+        letter-spacing: 0.1em;
+      }
+
+      section {
+        padding: 2rem 1.5rem;
+      }
+
+      section::before {
+        display: none;
+      }
+
+      nav ul {
+        gap: 0.25rem 1rem;
+      }
+
+      nav a {
+        font-size: 0.7rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media print {
+      /* Hide navigation and footer in print */
+      nav, footer {
+        display: none;
+      }
+
+      /* Reset to clean, simple black & white */
+      :root {
+        --color-primary: #1a3c34;
+        --color-text: #000;
+        --color-text-light: #444;
+        --color-border: #ccc;
+      }
+
+      body {
+        background: white;
+        font-size: 10pt;
+        line-height: 1.35;
+        color: #000;
+      }
+
+      .container {
+        max-width: 100%;
+        padding: 0;
+      }
+
+      main {
+        box-shadow: none;
+        border-radius: 0;
+      }
+
+      /* Clean, minimal header for print */
+      header {
+        background: none;
+        color: var(--color-primary);
+        padding: 0 0 0.3cm 0;
+        margin-bottom: 0.3cm;
+        border-bottom: 1.5pt solid var(--color-primary);
+      }
+
+      header::after {
+        display: none;
+      }
+
+      header h1 {
+        font-size: 16pt;
+        margin-bottom: 0;
+        text-shadow: none;
+        color: var(--color-primary);
+      }
+
+      header p {
+        font-size: 10pt;
+        color: #444;
+        text-transform: none;
+        letter-spacing: 0.05em;
+        margin-top: 0.1cm;
+      }
+
+      /* Remove decorative elements */
+      section::before {
+        display: none;
+      }
+
+      h1::after {
+        display: none;
+      }
+
+      /* Compact section spacing */
+      section {
+        padding: 0.3cm 0;
+        border-bottom: 0.5pt solid #ddd;
+      }
+
+      section:last-child {
+        border-bottom: none;
+      }
+
+      /* Clean headings */
+      h1 {
+        font-size: 12pt;
+        color: var(--color-primary);
+        margin-bottom: 0.25cm;
+        padding-bottom: 0.1cm;
+        border-bottom: 1pt solid var(--color-primary);
+      }
+
+      h2 {
+        font-size: 10pt;
+        color: #000;
+        margin-top: 0.25cm;
+        margin-bottom: 0.1cm;
+      }
+
+      h3 {
+        font-size: 9pt;
+        color: #333;
+        margin-top: 0.2cm;
+        margin-bottom: 0.1cm;
+        text-transform: none;
+        letter-spacing: 0;
+      }
+
+      p, li {
+        font-size: 9pt;
+        margin-bottom: 0.08cm;
+      }
+
+      ul, ol {
+        margin-bottom: 0.15cm;
+        padding-left: 0.4cm;
+      }
+
+      li {
+        margin-bottom: 0.03cm;
+      }
+
+      li::marker {
+        color: #333;
+      }
+
+      /* Simple link styling */
+      a {
+        color: #000;
+        border-bottom: none;
+      }
+
+      /* Show URLs after links */
+      a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 7pt;
+        color: #666;
+        word-break: break-all;
+      }
+
+      /* Don't show URL for DOI links (they're already visible) */
+      a[href^="https://doi.org"]::after {
+        content: none;
+      }
+
+      strong {
+        color: #000;
+      }
+
+      em {
+        color: #333;
+      }
+
+      /* Page break control */
+      section {
+        break-inside: avoid-page;
+      }
+
+      h1, h2, h3 {
+        break-after: avoid-page;
+      }
+
+      /* Avoid orphans and widows */
+      p {
+        orphans: 3;
+        widows: 3;
+      }
+
+      /* Page margins */
+      @page {
+        margin: 1.5cm 1.5cm 1.5cm 1.5cm;
+        size: letter;
+      }
+
+      @page :first {
+        margin-top: 1.2cm;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+<header>
+  <h1>Sofia Penabaz-Wiley, Ph.D.</h1>
+  <p>Curriculum Vitae</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#conferences">Conferences</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#volunteer">Volunteer</a></li>
+    <li><a href="#interests">Interests</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <main>
+    <section id="experience">
+      <h1>EXPERIENCE</h1>
+<h2>11/2023 -- Present: Puerto Vallarta, Jalisco, Mexico. <strong>Mentor</strong></h2>
+<p>Using knowledge of publication and research methods, as well as complex systems, to mentor a master's student in Cybernetics from DePaul University in his academic practices. Performing as second author for conferences and publications.</p>
+<h2>10/2021 -- Present: Chiba University, Matsudo City, Chiba Prefecture. <strong>Part-time Lecturer</strong></h2>
+<p>Teaching Landscape and Environmental Science in English. Undergraduate required course for all juniors. Using Google Classroom and several multimedia and online tools to enhance the lesson, critical thinking, interaction, language production, and active learning. Various reading, listening, and comprehension sources include books, websites, academic papers, audiobooks, and movies.</p>
+<h2>5/2020 -- Ongoing: Greencastle, Matsudo City, Chiba Prefecture. <strong>Consultant &amp; Designer (Self-employed)</strong></h2>
+<p>Green ethnobotanical design for indoor, outdoor, and rooftop environments. Research which plants grow best in what environments. Study how to propagate native and tropical (indoor) plants. Ethnobotanical plant studies for modern use.</p>
+<p>Language and cultural consulting involves teaching language, editing English academic papers, intercultural and linguistic interpretation, voice-over, commercial and technical language editing, and cultural tours of Japan (and of Puerto Vallarta, MX, continued in 2022). Customers include Chiba University, Parker's (greenery and interior design), and various individuals.</p>
+<h2>02/2020 -- 03/2020: Kamiyama Green Valley NPO, S6IX Accelerator Program, Kamiyama Village, Tokushima. <strong>Mentor</strong></h2>
+<p><em>Mentoring on ethnobotanical aquaponics units for local revitalization.</em></p>
+<p>Imparting ethnobotanical knowledge, teaching social research techniques, doing aquaponics design specific to the innovative project, public presentations, and teamwork. Halted due to the pandemic.</p>
+<h2>10/2018 -- 9/2021: Chiba University, Matsudo City, Chiba Prefecture. <strong>Post-Doctoral Researcher</strong></h2>
+<p>Wrote, submitted, and edited academic literature for self and faculty.</p>
+<p>Edited English handouts, pamphlets, books, promotional materials and letters for university staff and faculty.</p>
+<p>Aided faculty with campus duties and academic activities.</p>
+<p>Did translation and interpretation, tour guiding, and general help with hosting international conferences and visitors.</p>
+<p>In charge of organizing and conducting the English-speaking-hour for Japanese and international students.</p>
+<h2>6/2019 -- 8/2019: Shanghai PI Cultural Exchange, Shanghai, China. <strong>Ethnobotanical Plant Educator, Landscape Designer</strong></h2>
+<p>Taught classes several times per week at community centers and libraries about Ethnobotanical plants of East Asia specific to Shanghai. Students were children and their caretakers. Researched Japanese and Chinese differences in ethnobotanical and landscape use, especially in parks and communities.</p>
+<p>Designed verandas and entranceways with ethnobotanical plants, green walls, and aquaponics systems focusing on recycling and reusing local resources and local refuse materials.</p>
+<h2>4/2016 -- 6/2019: Chiba University, Matsudo City, Chiba Prefecture. <strong>Part-time Lecturer, Research Asst. &amp; T.A.</strong></h2>
+<p>Continued lectures for a master's level course in English Presentation Skills.</p>
+<p>In charge of English House Matsudo, a weekly English-speaking hour.</p>
+<p>Teaching English weekly lessons one-on-one to university students and visiting professors.</p>
+<p>T.A. and co-organizer for graduate student Project Management Course taught by JICA, 3 years.</p>
+<p>Edit English handouts, pamphlets, books, promotional materials, and letters for university staff and faculty.</p>
+<p>Organize, promote, and accomplish bimonthly Jazz music events, community connection events, and skills workshops.</p>
+<p>M.C. and singer at the annual Holiday Party for International Students' Association.</p>
+<p>Voice-over recording for Chiba University Matsudo Campus promotional video.</p>
+<p>Volunteer support and participation in the laboratory and student projects from various labs (varied disciplines).</p>
+<h3>Specific to Landscape Design, Landscape Planning, and Community Development:</h3>
+<ul>
+<li>
+<p>Machizukuri (Bottom-up community planning) assistant and facilitator for various communities in Matsudo, Izu, and Kambara. Work included interviews, questionnaires and working with local people, schools, and governmental entities.</p>
+</li>
+<li>
+<p>(2017) Documented and mapped existing botanicals in a traditional Japanese garden in Kambara in a team.</p>
+</li>
+<li>
+<p>(2015-2020) Identified ethnobotanical plants in Nogiku (Matsudo City) and researched the landscape and local social integration with it.</p>
+</li>
+<li>
+<p>(2014-2015) Was a Machizukuri workshop facilitator in Irouzaki and assisted in creating the final design for the area General Plan. Built several landscape models, sketched plans, and identified existing and necessary ethnobotanical elements. Created an ethnobotanical book for local people.</p>
+</li>
+<li>
+<p>Collaborated and assisted at various local events and activities for community improvement, such as Iwase community improvement seminars, translation and interpretation for guest speakers, taught the traditional charcoal watercolor Sumi-E to Iwase locals, did ethnobotanical education slide presentations, and other activities.</p>
+</li>
+<li>
+<p>Taught an Ethnobotanical Sumi-E class of traditional Japanese watercolor to university students and residents in Matsudo.</p>
+</li>
+<li>
+<p>Volunteer environmental Ethnobotanical education for Matsudo City residents (Invited, special event).</p>
+</li>
+</ul>
+<h2>2/2015 to 3/2016: Seitoku University &amp; Seitoku Elementary School, Matsudo City, Chiba Pref. <strong>Part-time University Lecturer &amp; Elementary School Native English Teacher.</strong></h2>
+<p>University Lecturer -- Designed curriculum, taught all lessons, and did evaluation for a Japanese university-level, year-long set of English classes.</p>
+<p>Elementary School Teacher -- Designed curriculum, made materials, and taught in a group of four teachers.</p>
+<h2>4/2011 to 3/2014: Waseda Saga Gakuen, Karatsu City, Saga Prefecture. <strong>Native English Teacher.</strong></h2>
+<p>Three types of classes: Advanced English, team teaching, and ESS Club. Also, did student-requested special lessons.</p>
+<p>Taught junior and senior high school students English as a Foreign Language (EFL).</p>
+<p>Taught English and English as a Second Language (ESL) to returnees and advanced English learners in AP English.</p>
+<p>Designed AP lessons and curriculum for advanced learners. Included: Critical Thinking, poetry, literature, literary elements, mistake analysis, essay writing, TOEFL iBT strategies, Philosophy, English history, typing, and teaching vocabulary and grammar through film and literature.</p>
+<p>Did seminars in English Teaching for English Teachers of Japan.</p>
+<p>Trained students in speech and presentation.</p>
+<p>Helped English Teachers with high-level English Grammar questions.</p>
+<p>Responsible for the English club and the design of their activities. Included: training students in standardized tests such as TOEIC, TOEFL, and Eiken, yoga in English, dance, drama, teamwork, video editing, Basic Spanish, English conversation, simple techniques for learning English from books and movies, and organizing pen pal letter correspondence.</p>
+<p>Mentored students and helped in the school nurse's room as part of the Health and Mentorship Committee. Included: nursing students, making judgments on health and emergencies, contacting coworkers, filling in basic paperwork in Japanese, and counseling students.</p>
+<p>Took part in the English Teachers' Weekly Meeting and offered up ideas. Helped to select textbooks, standardized tests, items, schedules, and deciding general procedures.</p>
+<p>Managed several groups of students at once for tasks such as cleaning. Organized and directed three groups of energetic teenagers to clean various areas around the campus every school day.</p>
+<h3>Special Accomplishments:</h3>
+<p>Students, trained one-on-one, won 1st Place in prefectural speech contests all three years, some progressing nationally.</p>
+<p>A blind survey of the AP English Class demonstrated enjoyment and learning of unique things.</p>
+<h2>8/2010 to 03/2011: KBS Inc., Saga City, Saga Prefecture. <strong>ALT.</strong></h2>
+<p>Taught English as a Foreign Language (EFL) in elementary and junior high schools.</p>
+<p>Worked with teachers to teach using the textbook while addressing different learning styles and needs.</p>
+<h2>4/2009 to 7/2010: Interac Company, Miyazaki Prefecture. <strong>ALT.</strong></h2>
+<p>Taught EFL in preschool, elementary, and junior high schools: games, multimedia, student creativity, realia, etc.</p>
+<h2>01/2009 to 04/2009: Kid's Dream, Sasaguri, Fukuoka Prefecture. <strong>Preschool Teacher.</strong></h2>
+<p>Taught English to babies as a preschool teacher. Coaxed babies into eating and sleeping through gentle guidance, chants, and songs. Taught older children through flashcards, games, activities, and realia.</p>
+<h2>10/2007 to 10/2008: Sofia's Language School, Puerto Vallarta, Mexico. <strong>Owner/Teacher.</strong></h2>
+<p>Taught English, Spanish and beginning Japanese to community members and Spanish to business people from abroad.</p>
+<h2>07/2004 to 07/2007: JET Programme, Kurume City, Fukuoka Prefecture. <strong>ALT.</strong></h2>
+<p>Taught English as a Foreign Language (TEFL) in junior high and elementary schools.</p>
+<p>Designed junior high school lesson plans (considered the text, grammar points, and current learning level).</p>
+<p>Team-taught weekly, communicating smoothly and teaching effectively with junior high school teachers.</p>
+<p>Designed and provided handmade materials for all English lessons: games, phonics, language patterns, etc.</p>
+<p>Volunteer participation in making fun lessons for ALT training at meetings in various subjects, including TEFL.</p>
+<p>Taught night classes to adult language learners.</p>
+<p>Sometimes taught Spanish.</p>
+<h2>10/2003 to 05/2004: El Togoroz Restaurant, Petaluma, CA. <strong>Mural Painter.</strong></h2>
+<p>Negotiated, planned, and painted a mural the entire length of the restaurant in national symbols of the country of El Salvador: a volcano and the Turquoise-Browed Motmot (a bird).</p>
+<h2>07/2002 to 07/2003: County of Monterey Environmental Health Dept, Monterey, CA. <strong>Environmental Health Inspector.</strong></h2>
+<p>Worked with the planning department to review building plans to make sure that new buildings or alterations met environmental requirements.</p>
+<p>Inspected various businesses for proper compliance with Environmental Health laws.</p>
+<p>Inspected homes and land regarding septic and well water safety issues.</p>
+<p>Tested wastewater at a treatment plant for possible secondary use in agriculture as part of a research team.</p>
+<h2>03/2002 to 07/2002: Sustainable Monterey Bay, Santa Cruz, CA. <strong>Green Building Designer.</strong></h2>
+<p>Designed 4 to 40-unit apartment complexes for a non-profit organization.</p>
+<p>Some parameters included lofts, wet core incorporation, community areas, space limitations, and green roofs. (Unpaid volunteer position)</p>
+<h2>02/2002 to 04/2002: Mann Packing Company, Salinas, CA. <strong>Quality Assurance Supervisor.</strong></h2>
+<p>Designed new forms for technician use regarding personal safety, compliance with rules, Quality Control, food safety (temperature, handling, defects, and appearance), and other Good Manufacturing Practices.</p>
+<p>Used Word, Excel, and bi-literate (Spanish / English) proficiencies to observe, document, and provide guidance to factory workers in the plant.</p>
+<h2>05/2001 to 02/2002: City of Gilroy Chemical Control, Gilroy, CA. <strong>Chemical Control Intern.</strong></h2>
+<p>Wrote the Injury and Illness Prevention Program to OSHA compliance and specific to the City's needs.</p>
+<p>Studied environmental impact and investigated responsible parties by analyzing possibilities such as groundwater or sewage flow on land parcels and topographical maps.</p>
+<p>Assistance and observation of various regulatory program inspections.</p>
+<p>Customer service and conflict resolution between business owners.</p>
+<p>Designed new brochures and new inspection records users' handbook and did data entry of the completed forms.</p>
+<p>Translated during regulatory inspections from Spanish to English and vice versa.</p>
+<p>When necessary, translated forms, documents, and conversations into Spanish.</p>
+<p>Wrote reports, letters, and permit conditions using accounting, data management, and regulations research and analysis.</p>
+<h2>06/2000 to 05/2001: ATC, Environmental Consulting, Monterey, CA. <strong>Environmental Specialist.</strong></h2>
+<p>Inspected private residences, businesses, and factories for environmental issues.</p>
+<p>Sampled air, soil, and building materials and sent environmentally sensitive samples to the lab.</p>
+<p>Wrote environmental reports based on environmental analysis and remediation requirements.</p>
+<p>Advised good business practices concerning tanks and toxic materials.</p>
+<p>Analyzed geothermal heating, wells, and septic systems' topography and distances to planned and existing buildings.</p>
+<h2>09/1999 to 11/1999: Papa's Taverna, Petaluma, CA. <strong>Waitress.</strong></h2>
+<p>Served large groups of 20 to 40 people in a busy Greek restaurant bar amidst boisterous music and dancing.</p>
+<h2>01/1999 to 11/1999: Liberty Elementary School District, Petaluma, CA. <strong>ESL Aid.</strong></h2>
+<p>Taught English, math, and science to ESL students in 4th grade in groups and one-on-one. Taught Spanish to the 4th-grade class. Translated documents and performed oral translation during large and small meetings.</p>
+<h2>08/1998 to 12/1998: Yao Kiku, Santa Rosa, CA. <strong>Sushi Chef and Waitress.</strong></h2>
+<p>Welcomed and waited on customers and made elegant food under the guidance of the Japanese chef/owner.</p>
+<h2>03/1998 to 06/1998: Client: Scott Whittaker, Rohnert Park, CA. <strong>Private Spanish Tutor.</strong></h2>
+<p>Taught Spanish and Cuban music styles to a professional musician for his singing in a salsa band.</p>
+<h2>05/1998 to 08/1998: SSALI At Sonoma State University, Rohnert Park, CA. <strong>English Teacher, ESL Tutor.</strong></h2>
+<p>Instructed international students in English pronunciation, grammar, reading, and communication.</p>
+<p>Volunteered, inviting international students on outings and aided them in learning English.</p>
+<h2>02/1998 to 06/1998: Sonoma State University Costume Shop, Rohnert Park, CA. <strong>Costume Designer and Seamstress.</strong></h2>
+<p>Designed, sewed, tailored, and altered costumes.</p>
+
+    </section>
+
+    <section id="education">
+      <h1>EDUCATION</h1>
+<h2>2014 to 2018: Chiba University Graduate School of Horticulture, Matsudo City, Japan</h2>
+<p><strong>Ph.D. in Environmental Science and Landscape Planning</strong></p>
+<p>Title: Integrating Ethnobotany with Psychological Ownership in Order to Improve Social-Ecological Systems</p>
+<p>社会生態学的系改善のためのエスノボタニーと心理的所有権の統合に関する研究</p>
+<h2>1997 to 2000: Sonoma State University, Rohnert Park, CA.</h2>
+<p><strong>B.A., Biological Sciences. Minor, Linguistics.</strong></p>
+<p>Certification: Teaching English as a Second Language (TESL). Yearlong series, 24 units.</p>
+<h2>Fall 1997, Spring 1998. Japanese Language, Santa Rosa Junior College.</h2>
+<h2>Spring 2003. Engineering Drafting and Design course, Cabrillo College, Santa Cruz, CA.</h2>
+
+    </section>
+
+    <section id="publications">
+      <h1>PUBLICATIONS &amp; DESIGNS</h1>
+<h2>Academic Papers</h2>
+<h3>2024 - Cybernetics Publication</h3>
+<ul>
+<li><strong>Title</strong>: The requisite variety of presence: A cybernetic intervention in knowledge work's attention crisis.</li>
+<li><strong>Authors</strong>: Brett Neese &amp; Sofia M. Penabaz-Wiley (2nd author)</li>
+<li><strong>Journal</strong>: Enacting Cybernetics</li>
+<li><strong>Date</strong>: Nov. 2025</li>
+<li><strong>Volume/Issue</strong>: 3(1), Article 2</li>
+<li><strong>DOI</strong>: https://doi.org/10.58695/ec.20</li>
+</ul>
+<h3>2019 - Urban and Regional Planning</h3>
+<ul>
+<li><strong>Title</strong>: Suburban Residents' Psychological Ownership of Ethnobotanical Plants Found in Surrounding Green Spaces: A Case Study at Matsudo City's Nogikuno Housing Complex, Chiba Prefecture, Japan</li>
+<li><strong>Authors</strong>: Sofia M. Penabaz-Wiley &amp; Isami Kinoshita (first author)</li>
+<li><strong>Journal</strong>: Urban and Regional Planning Review</li>
+<li><strong>Date</strong>: Nov. 2019</li>
+<li><strong>Volume</strong>: 6</li>
+<li><strong>Pages</strong>: 125-147</li>
+<li><strong>DOI</strong>: https://doi.org/10.14398/urpr.6.125</li>
+</ul>
+<h3>2019 - Architectural Institute of Japan</h3>
+<ul>
+<li><strong>Title</strong>: Psychological Ownership of Ethnobotany for Strengthening Social-Ecological Systems</li>
+<li><strong>Japanese Title</strong>: エスノボタニーからの心理的オーナーシップ醸成による社会・生態システム活性化に関する研究 ---南伊豆町石廊崎地区における事例</li>
+<li><strong>Authors</strong>: Sofia M. Penabaz-Wiley, Aiko Eguchi &amp; Isami Kinoshita (first author)</li>
+<li><strong>Journal</strong>: Architectural Institute of Japan</li>
+<li><strong>Date</strong>: May 2019</li>
+<li><strong>Volume</strong>: 84</li>
+<li><strong>Number</strong>: 759</li>
+<li><strong>Pages</strong>: 1135-1144</li>
+<li><strong>DOI</strong>: https://doi.org/10.3130/aija.84.1135</li>
+</ul>
+<h3>2018 - Doctoral Dissertation</h3>
+<ul>
+<li><strong>Title</strong>: Integrating ethnobotany with psychological ownership in order to improve social-ecological systems [Doctoral dissertation, Chiba University]</li>
+<li><strong>Author</strong>: Sofia M. Penabaz-Wiley</li>
+<li><strong>Date</strong>: August 2018</li>
+<li><strong>Institution</strong>: Chiba University Repository</li>
+<li><strong>Total Pages</strong>: 334</li>
+<li><strong>URL</strong>: https://opac.ll.chiba-u.jp/da/curator/105840/HAA_0075.pdf</li>
+</ul>
+<h3>2018 - Journal of Environmental Information Science</h3>
+<ul>
+<li><strong>Title</strong>: The Use of Ethnobotanical Landscape to Revitalize Rural Communities: Learning from Todmorden, England, Past and Present</li>
+<li><strong>Authors</strong>: Sofia M. Penabaz-Wiley &amp; Isami Kinoshita (first author)</li>
+<li><strong>Journal</strong>: Journal of Environmental Information Science</li>
+<li><strong>Date</strong>: February 2018</li>
+<li><strong>Volume</strong>: 2017</li>
+<li><strong>Number</strong>: 2</li>
+<li><strong>Pages</strong>: 25-36</li>
+</ul>
+<h3>2018 - Environment-Behaviour Proceedings Journal</h3>
+<ul>
+<li><strong>Title</strong>: The Psychological Ownership of Ethnobotanicals through Education</li>
+<li><strong>Authors</strong>: Sofia M. Penabaz-Wiley, Mitsunari Terada, Isami Kinoshita (first author)</li>
+<li><strong>Journal</strong>: Environment-Behaviour Proceedings Journal</li>
+<li><strong>Date</strong>: August 2018</li>
+<li><strong>Volume</strong>: 3</li>
+<li><strong>Number</strong>: 8</li>
+<li><strong>Pages</strong>: 12-21</li>
+</ul>
+<h3>2017 - HortResearch Publication</h3>
+<ul>
+<li><strong>Title</strong>: インクレディブル・エディブル Incredible Edible</li>
+<li><strong>Author</strong>: Sofia M. Penabaz-Wiley</li>
+<li><strong>Journal</strong>: HortResearch</li>
+<li><strong>Date</strong>: March 2017</li>
+<li><strong>Volume</strong>: 71</li>
+<li><strong>Issue</strong>: Edible Landscape</li>
+<li><strong>Pages</strong>: 6-7</li>
+</ul>
+<h3>2017 - HortResearch Publication</h3>
+<ul>
+<li><strong>Title</strong>: ドクダミを食べる Eating Houttuynia</li>
+<li><strong>Author</strong>: Sofia M. Penabaz-Wiley</li>
+<li><strong>Journal</strong>: HortResearch</li>
+<li><strong>Date</strong>: March 2017</li>
+<li><strong>Volume</strong>: 71</li>
+<li><strong>Issue</strong>: Edible Landscape</li>
+<li><strong>Pages</strong>: 8-9</li>
+</ul>
+<h3>2015 - Reports of the City Planning Institute of Japan</h3>
+<ul>
+<li><strong>Title</strong>: 石廊崎ジャングルパーク跡地利用計画策定ワークショップを事例として - The Usefulness and Difficulties of Conducting Community Development Workshops: The Case of the Irouzaki Jungle Park's Redevelopment Project</li>
+<li><strong>Authors</strong>: Aiko Kimura, Sofia Maria Penabaz-Wiley, Natsuko Takahashi, Isami Kinoshita</li>
+<li><strong>Journal</strong>: Reports of the City Planning Institute of Japan</li>
+<li><strong>Date</strong>: May 2015</li>
+<li><strong>Volume</strong>: 14</li>
+<li><strong>Pages</strong>: 87-90</li>
+</ul>
+<h3>2015 - Sustainability Journal</h3>
+<ul>
+<li><strong>Title</strong>: Models and approaches for integrating protected areas with their surroundings: A review of the literature</li>
+<li><strong>Authors</strong>: Wenwu Du, Sofia. M. Penabaz-Wiley, Anthony. M. Njeru, Isami Kinoshita</li>
+<li><strong>Journal</strong>: Sustainability</li>
+<li><strong>Date</strong>: June 2015</li>
+<li><strong>Volume</strong>: 7</li>
+<li><strong>Number</strong>: 7</li>
+<li><strong>Pages</strong>: 8151-8177</li>
+</ul>
+<h2>Design Projects</h2>
+<h3>2002 - Single Mother Live-Work Building Designs</h3>
+<ul>
+<li><strong>Designer</strong>: Self (volunteer position)</li>
+<li><strong>Issuer</strong>: Sustainable Monterey Bay, Santa Cruz, CA</li>
+<li><strong>Date</strong>: July 2002</li>
+<li><strong>Overview</strong>: Designed 4 to 40-unit apartment complexes. Main features: green roofs, cost reduction through prefabricated sections, work-live units, and private social central area</li>
+</ul>
+<h3>2015 - Irouzaki General Plan</h3>
+<ul>
+<li><strong>Designers</strong>: Aiko Kimura, Sofia Maria Penabaz-Wiley, Natsuko Takahashi, Isami Kinoshita</li>
+<li><strong>Issuer</strong>: Minami Izu Local Government</li>
+<li><strong>Date</strong>: February 2015</li>
+<li><strong>Title</strong>: The Final Design of the Irouzaki Jungle Park for the Irouzaki General Plan</li>
+<li><strong>Main Contributions</strong>: Ethnobotanical garden areas; Play Areas; Design Support: all other areas</li>
+</ul>
+<h3>2016 - Inohana Children's Hospital Green Roof</h3>
+<ul>
+<li><strong>Designers</strong>: Sofia M. Penabaz-Wiley, Amonkar Deepika, Jorge Izquierdo, Poh Qiying, Shi Yang</li>
+<li><strong>Issuer</strong>: National University of Singapore and Chiba University Joint Collaborative Design Workshop: Children's Hospital Design</li>
+<li><strong>Date</strong>: February 26, 2016</li>
+<li><strong>Title</strong>: &quot;Landscape as Connectivity&quot;</li>
+<li><strong>Main Contributions</strong>: Ethnobotanical aspects for five senses, universal design interactive garden play, aquaculture, labyrinth, cupola, ecological support systems. Developed most of the wildlife support, the disabled children's universal design playground, and the aquaponics unit. Used recycled water from the AC units to feed into the space for wildlife. Contributed plant selection.</li>
+</ul>
+<h3>2014 - CCDC 2014 Cross-Cultural Design Collaboration (Iro Park)</h3>
+<ul>
+<li><strong>Designers</strong>: Juan C. Gálvez, Lin Bai, Sofia M. Penabaz-Wiley</li>
+<li><strong>Issuer</strong>: Chiba University Cross-Cultural Design Collaboration (CCDC)</li>
+<li><strong>Date</strong>: September 2014</li>
+<li><strong>Title</strong>: Group 3, &quot;Iro Park&quot;</li>
+<li><strong>Main Contributions</strong>: Water element, herb garden for children's play, cupola, labyrinth, shape, and location inside the park, a half-moon of cherry trees nearby, and UD benches throughout the park. Created an area in the park for children to play in water, art created by a local artist, a shade space for mothers, and native and herbal plants for pollinators as well as for children to learn. Has signature labyrinth and colorful recycled glass mosaic shade structure.</li>
+</ul>
+<h3>2019 - Recycling Game and Ethnobotanical System</h3>
+<ul>
+<li><strong>Designer</strong>: Self (individual project)</li>
+<li><strong>Issuer</strong>: NPO China PI Cultural Exchange, Community Development Projects (CDP), Shanghai, China</li>
+<li><strong>Date</strong>: June 2019</li>
+<li><strong>Overview</strong>: Developed a tiered ethnobotanical system and recycling game to make recycling fun for children based on the needs of the community to recycle trash and their lack of funds. Utilizing recycled materials and a recycling station, created a place to play and grow ethnobotanical plants.</li>
+</ul>
+<h3>2019 - Guang Community Center Green Veranda</h3>
+<ul>
+<li><strong>Designer</strong>: Self (individual project)</li>
+<li><strong>Issuer</strong>: NPO China PI Cultural Exchange, CDP, Shanghai, China</li>
+<li><strong>Date</strong>: July 2019</li>
+<li><strong>Overview</strong>: Designed a simple aquaponics unit for the community center where people could gather food as well as enjoy the live fish.</li>
+</ul>
+<h3>2020 - Green Kamiyama Maker Space Aquaponics System</h3>
+<ul>
+<li><strong>Designer</strong>: Self</li>
+<li><strong>Issuer</strong>: Kamiyama Village, Tokushima, 2020</li>
+<li><strong>Overview</strong>: Designed aquaponics system for community revitalization using rainwater capture, native ethnobotanical plants and endangered fisheries, and agricultural plants in the indoor system. Presentation of design operation aired online for Tokushima and Osaka residents and stakeholders.</li>
+</ul>
+
+    </section>
+
+    <section id="conferences">
+      <h1>CONFERENCES</h1>
+<ul>
+<li>
+<p><strong>2024 (6/18)</strong> American Society of Cybernetics 60th Anniversary Conference (oral presentation &amp; second author)</p>
+</li>
+<li>
+<p><strong>2021 (11/26)</strong> International Community of Spatial Planning and Sustainable Development (oral presentation) multi-participation evaluation system on the renewal of urban villages: a study of residents and neighborhoods</p>
+</li>
+<li>
+<p><strong>2018 (7/12)</strong> Chinese Society of Ethnobotany (Invited) in Kunming City, Yunnan (Oral Presentation) The Use of Ethnobotany to Revitalize Suburban and Rural Communities: The Case of Todmorden, England</p>
+</li>
+<li>
+<p><strong>2018 (6/05)</strong> Joint Conference of Society of Ethnobiology and the Society for Economic Botany in Madison, Wisconsin (Oral Presentation) Ethnobotanicals and Psychological Ownership of the Landscape: A Case Study in Suburban Matsudo, Japan</p>
+</li>
+<li>
+<p><strong>2017 (4/26)</strong> Plants &amp; People Museum Symposium (Poster Presentation) Incredible Edible Todmorden: Past and Present</p>
+</li>
+<li>
+<p><strong>2017 (3/2)</strong> Future Earth Kickoff (Poster Presentation) Incredible Edible Todmorden and Irouzaki: A Comparative Study in Edible Landscape</p>
+</li>
+<li>
+<p><strong>2017 (2/17)</strong> Matsudo City and Edible Way (Slide Presentation) Todmorden's Incredible Edible</p>
+</li>
+<li>
+<p><strong>2013</strong> ETJ Kyushu ELT Expo (Speaker); Textbook Realia</p>
+</li>
+<li>
+<p><strong>2012</strong> ETJ Kyushu ELT Expo (Speaker); Teaching Cross-Cultural Differences Through the Internet</p>
+</li>
+<li>
+<p><strong>JET Conferences, Fukuoka 2006</strong> (Speaker); Games for the JHS EFL Classroom</p>
+</li>
+<li>
+<p><strong>JET Conferences, Fukuoka 2005</strong> (Speaker); Teaching EFL Vocabulary to Junior High School Students</p>
+</li>
+<li>
+<p><strong>San Francisco Green Conference, 2003</strong> (Attendee)</p>
+</li>
+<li>
+<p><strong>CWEA and WRPPN Pollution Prevention Conference, 2001</strong> (Attendee)</p>
+</li>
+<li>
+<p><strong>Society for Science Within Consciousness Conference, Berkeley, CA., 1995</strong> (Attendee)</p>
+</li>
+</ul>
+
+    </section>
+
+    <section id="achievements">
+      <h1>ACHIEVEMENTS AND PRIZES</h1>
+<ul>
+<li>
+<p><strong>National Science Foundation</strong> -- Travel Award to attend Ethnobiology Conference in Madison, USA. June 2018.</p>
+</li>
+<li>
+<p><strong>Asahi Exhibit</strong> - publicly displayed 80 paintings + live painting, Galerías Vallarta Mall, Puerto Vallarta. June 2008.</p>
+</li>
+<li>
+<p><strong>Madonnari Festival</strong> -- Sidewalk Art (Invited artist), Puerto Vallarta, 2008.</p>
+</li>
+<li>
+<p><strong>Tuolumne County Garden Club Scholarship</strong>, Sonora, CA, 1995.</p>
+</li>
+<li>
+<p><strong>Voice of Democracy Speech Contest</strong>, Mariposa, CA. 1st Place, 1991.</p>
+</li>
+<li>
+<p><strong>Citywide Environmental Poetry Contest</strong>, Puerto Vallarta, Mexico, 1st Place Prize, 1989.</p>
+</li>
+</ul>
+<h2>Students: (Speech Contests)</h2>
+<ul>
+<li>One National Finalist</li>
+<li>Four prefectural, 1st Place</li>
+<li>Two prefectural, 2nd Place</li>
+</ul>
+
+    </section>
+
+    <section id="skills">
+      <h1>GENERAL SKILLS</h1>
+<p>Bilingual and biliterate (English/Spanish), intermediate (JLPT N3) written Japanese Language, advanced spoken Japanese Language, translation and interpretation. Project management, system analysis and problem-solving, spatial analysis and problem-solving, teamwork, teaching, mentorship and leadership, customer service, public relations, creative theory, and seminar speaking.</p>
+
+      <h1>TECHNICAL SKILLS</h1>
+<h2>General</h2>
+<p>Design drafting and plan visualization, descriptive technical writing, plant identification, botanical illustration</p>
+<h2>Software</h2>
+<p>General office and team use, conducting surveys, SPSS, R programming for statistical computing and data visualization and analysis, qualitative research, mixed methods, ArcGIS, project management environment, website development, Google Education environment, Blackmagic video editing, Adobe Creative Suite and other illustration and drawing software for design and architecture, photogrammetry, LIDAR, AutoCAD, Rhino.</p>
+<h2>Hardware</h2>
+<p>Desktop computer assembly and troubleshooting, soldering and electronic parts replacement, and some electrical circuit troubleshooting and repair.</p>
+
+      <h1>RESEARCH SKILLS</h1>
+<p>Complex system analysis and problem-solving, planning, team design, teaching, community workshop facilitation, interviews, questionnaire surveys, design, botanical documentation, mapping, environmental education, report-writing, form design, planning of landscapes and social-environmental systems on large and small scales.</p>
+
+      <h1>ART &amp; DESIGN SKILLS</h1>
+<h2>Landscape Architecture</h2>
+<p>Spatial analysis and interdisciplinary problem-solving, empathetic/biophilic/universal design, conceptualization, hand sketches and drafting, scale modeling, model photography, universal design, and ethnobotany.</p>
+<h2>Fine Art</h2>
+<p>Fine art (pottery, watercolor, mixed media - from higher education/apprenticeship training); Japanese Sumi-E charcoal watercolor (3-year study, Japan). Bitwig and other music software.</p>
+<h2>Other Skills</h2>
+<p>Adobe Creative Suite and other illustration and drawing software; photography; acrylics, pastels, watercolors, and oils; clay and stone working. 3D design software.</p>
+
+    </section>
+
+    <section id="volunteer">
+      <h1>VOLUNTEER WORK</h1>
+<ul>
+<li>
+<p><strong>Aquaponics for Community Revitalization Accelerator Mentor / System Designer</strong> -- Kamiyama Green Valley NPO, S6IX Accelerator Program, Kamiyama, 2020.</p>
+</li>
+<li>
+<p><strong>Orphan Infant Massage</strong> -- Kizuna Baby at Red Cross Medical Center, Hiroo, Tokyo, 2014 -- 2022.</p>
+</li>
+<li>
+<p><strong>Translator &amp; Interpreter</strong> -- XIII International Symposium on Plant Bioregulators in Fruit Production, Matsudo, 8/2017.</p>
+</li>
+<li>
+<p><strong>M.C. and Organizer</strong> -- Jazz Music events by the Kinoshita Lab and Matsudo Creative NPO, Matsudo, 2014 -- 2019.</p>
+</li>
+<li>
+<p><strong>Journal Language Editor</strong> -- HortResearch Vol. 71 Edible Landscape, Matsudo, 2017</p>
+</li>
+<li>
+<p><strong>Green Building Designs</strong> - Sustainable Monterey Bay, Santa Cruz, CA, 2002.</p>
+</li>
+<li>
+<p><strong>Gardener</strong> - Miwuk Native Plant Garden, Tuolumne, CA, 1996.</p>
+</li>
+</ul>
+
+    </section>
+
+    <section id="interests">
+      <h1>INTERESTS</h1>
+<p>Fine art, birds, mushrooms, cybernetics, green architecture, Ethnobotany, traditional medical systems, languages, social-ecological systems, naturalist philosophy, philosophy, poetry, yoga, dance, singing, building computers, and metal detecting.</p>
+
+    </section>
+  </main>
+</div>
+
+  <footer>
+    <p>Updated August 2024</p>
+  </footer>
+</body>
+</html>

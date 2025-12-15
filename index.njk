@@ -1,0 +1,62 @@
+---
+layout: base.njk
+title: Sofia Penabaz-Wiley, Ph.D. - Curriculum Vitae
+updated: August 2024
+---
+
+<header>
+  <h1>Sofia Penabaz-Wiley, Ph.D.</h1>
+  <p>Curriculum Vitae</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#conferences">Conferences</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#volunteer">Volunteer</a></li>
+    <li><a href="#interests">Interests</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <main>
+    <section id="experience">
+      {% markdown "content/01_experience.md" %}
+    </section>
+
+    <section id="education">
+      {% markdown "content/02_education.md" %}
+    </section>
+
+    <section id="publications">
+      {% markdown "content/11_publications_and_designs.md" %}
+    </section>
+
+    <section id="conferences">
+      {% markdown "content/05_conferences.md" %}
+    </section>
+
+    <section id="achievements">
+      {% markdown "content/06_achievements_and_prizes.md" %}
+    </section>
+
+    <section id="skills">
+      {% markdown "content/07_general_skills.md" %}
+      {% markdown "content/08_technical_skills.md" %}
+      {% markdown "content/09_research_skills.md" %}
+      {% markdown "content/10_art_and_design_skills.md" %}
+    </section>
+
+    <section id="volunteer">
+      {% markdown "content/04_volunteer_work.md" %}
+    </section>
+
+    <section id="interests">
+      {% markdown "content/03_interests.md" %}
+    </section>
+  </main>
+</div>
