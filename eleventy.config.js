@@ -12,11 +12,11 @@ module.exports = function(eleventyConfig) {
     return md.render(content);
   });
 
-  // Watch for changes in markdown files
-  eleventyConfig.addWatchTarget("./*.md");
+  // Watch for changes in content files
+  eleventyConfig.addWatchTarget("./content/**/*.md");
 
-  // Ignore the numbered markdown files (they're included via shortcode)
-  eleventyConfig.ignores.add("./[0-9]*.md");
+  // Ignore the CV markdown files (they're included via shortcode)
+  eleventyConfig.ignores.add("./content/cv/*.md");
 
   // Ignore CLAUDE.MD documentation file
   eleventyConfig.ignores.add("./CLAUDE.MD");
