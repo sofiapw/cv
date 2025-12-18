@@ -3,25 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>No-Bake Awesome Cookies!</title>
+  <title>No-Bake Awesome Cookies! - Sofia Penabaz-Wiley</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cormorant:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      /* Professional green palette inspired by ethnobotany & landscape */
-      --color-primary: #1a3c34;        /* Deep forest green */
-      --color-secondary: #2d5a4a;      /* Rich moss green */
-      --color-accent: #4a7c6f;         /* Sage accent */
-      --color-accent-light: #6b9d8f;   /* Light sage */
-      --color-highlight: #8fbc8f;      /* Soft botanical green */
-      --color-text: #2c3830;           /* Dark green-gray text */
-      --color-text-light: #5a6b62;     /* Muted green-gray */
-      --color-border: #d4ddd8;         /* Soft green-gray border */
-      --color-bg: #f7faf8;             /* Very subtle green-white */
-      --color-bg-alt: #ffffff;
-      --font-serif: 'Cormorant Garamond', Georgia, serif;
-      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      /* Nature-inspired palette - soft, organic tones */
+      --color-forest: #2c4a3e;
+      --color-moss: #4a6d5c;
+      --color-sage: #7d9b8a;
+      --color-fern: #9bb5a5;
+      --color-mist: #d4e4db;
+      --color-cream: #faf9f7;
+      --color-warm-white: #fffffe;
+      --color-bark: #5c4d3c;
+      --color-stone: #6b6b6b;
+      --color-text: #3a3a3a;
+      --color-text-soft: #666666;
+
+      /* Typography */
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Source Sans 3', -apple-system, sans-serif;
+      --font-accent: 'Cormorant', Georgia, serif;
     }
 
     * {
@@ -35,445 +39,450 @@
     }
 
     body {
-      font-family: var(--font-sans);
-      font-size: 16px;
-      line-height: 1.7;
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.8;
       color: var(--color-text);
-      background: var(--color-bg);
+      background: var(--color-cream);
+      -webkit-font-smoothing: antialiased;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-
-    header {
-      text-align: center;
-      padding: 4rem 2rem;
-      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
-      color: white;
-      margin-bottom: 0;
-      position: relative;
-    }
-
-    header::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--color-highlight) 0%, var(--color-accent-light) 50%, var(--color-highlight) 100%);
-    }
-
-    header h1 {
-      font-family: var(--font-serif);
-      font-size: 3rem;
-      font-weight: 600;
-      letter-spacing: 0.03em;
-      margin-bottom: 0.5rem;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    header p {
-      font-size: 1.1rem;
-      opacity: 0.9;
-      font-weight: 300;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-
+    /* Navigation */
     nav {
-      background: var(--color-bg-alt);
-      border-bottom: 1px solid var(--color-border);
+      background: var(--color-warm-white);
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--color-mist);
       position: sticky;
       top: 0;
       z-index: 100;
-      padding: 1rem 0;
-      box-shadow: 0 2px 8px rgba(26, 60, 52, 0.06);
     }
 
     nav ul {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 0.5rem 2rem;
+      gap: 3rem;
       list-style: none;
-      max-width: 900px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 0 1rem;
     }
 
     nav a {
-      color: var(--color-text-light);
-      text-decoration: none;
-      font-size: 0.8rem;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
       font-weight: 500;
+      color: var(--color-stone);
+      text-decoration: none;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 0.5rem 0;
-      border-bottom: 2px solid transparent;
-      transition: all 0.3s ease;
+      padding: 0.25rem 0;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--color-moss);
+      transition: width 0.3s ease;
     }
 
     nav a:hover {
-      color: var(--color-primary);
-      border-bottom-color: var(--color-accent);
+      color: var(--color-forest);
     }
 
-    main {
-      background: var(--color-bg-alt);
-      box-shadow: 0 4px 20px rgba(26, 60, 52, 0.08);
-      border-radius: 0 0 8px 8px;
+    nav a:hover::after {
+      width: 100%;
     }
 
-    section {
-      padding: 3rem 3rem;
-      border-bottom: 1px solid var(--color-border);
+    /* Article Header */
+    .article-header {
+      background: linear-gradient(165deg, var(--color-forest) 0%, var(--color-moss) 60%, var(--color-sage) 100%);
+      padding: 5rem 2rem 4rem;
+      text-align: center;
       position: relative;
+      overflow: hidden;
     }
 
-    section:last-child {
-      border-bottom: none;
-    }
-
-    h1 {
-      font-family: var(--font-serif);
-      font-size: 1.8rem;
-      color: var(--color-primary);
-      margin-bottom: 1.5rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 3px solid var(--color-accent);
-      display: inline-block;
-      position: relative;
-    }
-
-    h1::after {
+    .article-header::before {
       content: '';
       position: absolute;
-      bottom: -3px;
+      top: 0;
       left: 0;
-      width: 40%;
-      height: 3px;
-      background: var(--color-highlight);
+      right: 0;
+      bottom: 0;
+      background:
+        radial-gradient(ellipse at 20% 80%, rgba(255,255,255,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 40%);
+      pointer-events: none;
     }
 
-    h2 {
-      font-family: var(--font-serif);
-      font-size: 1.25rem;
-      color: var(--color-secondary);
-      margin-top: 2rem;
-      margin-bottom: 0.75rem;
+    .article-header-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .article-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 500;
+      color: var(--color-warm-white);
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .article-meta {
+      font-family: var(--font-accent);
+      font-size: 1.1rem;
+      color: var(--color-mist);
+      font-style: italic;
+      letter-spacing: 0.02em;
+    }
+
+    .article-meta time {
+      display: inline-block;
+    }
+
+    /* Decorative leaf accent */
+    .leaf-accent {
+      width: 40px;
+      height: 2px;
+      background: var(--color-fern);
+      margin: 1.5rem auto 0;
+      position: relative;
+    }
+
+    .leaf-accent::before,
+    .leaf-accent::after {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border: 1px solid var(--color-fern);
+      border-radius: 50%;
+      top: -3px;
+    }
+
+    .leaf-accent::before {
+      left: -12px;
+    }
+
+    .leaf-accent::after {
+      right: -12px;
+    }
+
+    /* Main Content Area */
+    .article-container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 2rem 5rem;
+    }
+
+    .article-content {
+      background: var(--color-warm-white);
+      padding: 3rem;
+      border-radius: 4px;
+      box-shadow: 0 2px 20px rgba(44, 74, 62, 0.06);
+    }
+
+    /* Typography within article */
+    .article-content h1 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--color-forest);
+      margin: 2.5rem 0 1rem;
+      line-height: 1.3;
+    }
+
+    .article-content h1:first-child {
+      display: none; /* Hide duplicate title */
+    }
+
+    .article-content h2 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--color-forest);
+      margin: 2.5rem 0 1rem;
       line-height: 1.4;
     }
 
-    section > h2:first-child,
-    h1 + h2 {
-      margin-top: 0;
-    }
-
-    h3 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--color-accent);
-      margin-top: 1.5rem;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-
-    p {
-      margin-bottom: 1rem;
-    }
-
-    ul, ol {
-      margin-bottom: 1rem;
-      padding-left: 1.5rem;
-    }
-
-    li {
-      margin-bottom: 0.5rem;
-      position: relative;
-    }
-
-    li::marker {
-      color: var(--color-accent);
-    }
-
-    a {
-      color: var(--color-accent);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s ease;
-    }
-
-    a:hover {
-      border-bottom-color: var(--color-accent);
-    }
-
-    strong {
-      font-weight: 600;
-      color: var(--color-secondary);
-    }
-
-    em {
-      color: var(--color-text-light);
+    .article-content h3 {
+      font-family: var(--font-accent);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--color-moss);
+      margin: 2rem 0 0.75rem;
       font-style: italic;
     }
 
-    .experience-entry h2 {
+    .article-content p {
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+    }
+
+    .article-content p:first-of-type::first-letter {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      float: left;
+      line-height: 1;
+      margin-right: 0.5rem;
+      margin-top: 0.1rem;
+      color: var(--color-forest);
+      font-weight: 500;
+    }
+
+    .article-content a {
+      color: var(--color-moss);
+      text-decoration: none;
+      border-bottom: 1px solid var(--color-fern);
+      transition: all 0.2s ease;
+    }
+
+    .article-content a:hover {
+      color: var(--color-forest);
+      border-bottom-color: var(--color-forest);
+    }
+
+    .article-content strong {
+      font-weight: 500;
+      color: var(--color-forest);
+    }
+
+    .article-content em {
+      font-style: italic;
+      color: var(--color-text-soft);
+    }
+
+    .article-content blockquote {
+      margin: 2rem 0;
+      padding: 1.5rem 2rem;
+      background: var(--color-cream);
+      border-left: 3px solid var(--color-sage);
+      font-family: var(--font-accent);
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--color-text-soft);
+    }
+
+    .article-content blockquote p {
+      margin-bottom: 0;
+    }
+
+    .article-content blockquote p::first-letter {
+      font-size: inherit;
+      float: none;
+      margin: 0;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin: 1.5rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .article-content li {
+      margin-bottom: 0.5rem;
+      font-weight: 300;
+    }
+
+    .article-content li::marker {
+      color: var(--color-sage);
+    }
+
+    /* Images */
+    .article-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin: 2rem 0;
+      box-shadow: 0 4px 20px rgba(44, 74, 62, 0.1);
+    }
+
+    .article-content p > img {
+      display: block;
+    }
+
+    /* Code blocks */
+    .article-content code {
+      font-family: 'SF Mono', Monaco, monospace;
+      font-size: 0.9em;
+      background: var(--color-cream);
+      padding: 0.2em 0.4em;
+      border-radius: 3px;
+    }
+
+    .article-content pre {
+      background: var(--color-forest);
+      color: var(--color-mist);
+      padding: 1.5rem;
+      border-radius: 4px;
+      overflow-x: auto;
+      margin: 2rem 0;
+    }
+
+    .article-content pre code {
+      background: none;
+      padding: 0;
+    }
+
+    /* Horizontal rules */
+    .article-content hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--color-mist), transparent);
+      margin: 3rem 0;
+    }
+
+    /* Tags */
+    .article-tags {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-mist);
+    }
+
+    .article-tags ul {
       display: flex;
       flex-wrap: wrap;
-      align-items: baseline;
       gap: 0.5rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
 
-    .date {
-      font-family: var(--font-sans);
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--color-accent);
+    .article-tags li {
+      margin: 0;
     }
 
-    .location {
+    .article-tags a {
+      display: inline-block;
+      font-size: 0.8rem;
       font-weight: 400;
-      color: var(--color-text-light);
+      color: var(--color-moss);
+      background: var(--color-cream);
+      padding: 0.35rem 0.75rem;
+      border-radius: 20px;
+      border: none;
+      text-transform: lowercase;
+      letter-spacing: 0.02em;
+      transition: all 0.2s ease;
     }
 
+    .article-tags a:hover {
+      background: var(--color-mist);
+      color: var(--color-forest);
+    }
+
+    /* Footer */
     footer {
       text-align: center;
-      padding: 2.5rem 2rem;
-      color: var(--color-text-light);
+      padding: 3rem 2rem;
+      color: var(--color-stone);
       font-size: 0.85rem;
-      background: var(--color-bg);
-      border-top: 1px solid var(--color-border);
+      font-family: var(--font-accent);
+      font-style: italic;
+      background: var(--color-cream);
     }
 
-    /* Subtle accent bar on left of sections */
-    section::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 3rem;
-      bottom: 3rem;
-      width: 3px;
-      background: linear-gradient(180deg, var(--color-highlight) 0%, var(--color-accent-light) 50%, transparent 100%);
-      opacity: 0.4;
-      border-radius: 0 2px 2px 0;
+    footer a {
+      color: var(--color-moss);
+      text-decoration: none;
     }
 
+    /* Back to blog link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--color-stone);
+      text-decoration: none;
+      margin-bottom: 2rem;
+      transition: color 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: var(--color-forest);
+    }
+
+    .back-link svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Responsive adjustments */
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      header p {
-        font-size: 0.9rem;
-        letter-spacing: 0.1em;
-      }
-
-      section {
-        padding: 2rem 1.5rem;
-      }
-
-      section::before {
-        display: none;
-      }
-
       nav ul {
-        gap: 0.25rem 1rem;
+        gap: 1.5rem;
       }
 
       nav a {
-        font-size: 0.7rem;
+        font-size: 0.75rem;
       }
 
-      h1 {
-        font-size: 1.5rem;
-      }
-    }
-
-    @media print {
-      /* Hide navigation and footer in print */
-      nav, footer {
-        display: none;
+      .article-header {
+        padding: 3rem 1.5rem 2.5rem;
       }
 
-      /* Reset to clean, simple black & white */
-      :root {
-        --color-primary: #1a3c34;
-        --color-text: #000;
-        --color-text-light: #444;
-        --color-border: #ccc;
+      .article-header h1 {
+        font-size: 1.75rem;
+      }
+
+      .article-container {
+        padding: 2rem 1rem 3rem;
+      }
+
+      .article-content {
+        padding: 2rem 1.5rem;
+      }
+
+      .article-content p:first-of-type::first-letter {
+        font-size: 2.5rem;
       }
 
       body {
-        background: white;
-        font-size: 10pt;
-        line-height: 1.35;
-        color: #000;
-      }
-
-      .container {
-        max-width: 100%;
-        padding: 0;
-      }
-
-      main {
-        box-shadow: none;
-        border-radius: 0;
-      }
-
-      /* Clean, minimal header for print */
-      header {
-        background: none;
-        color: var(--color-primary);
-        padding: 0 0 0.2cm 0;
-        margin-bottom: 0.2cm;
-        border-bottom: 1.5pt solid var(--color-primary);
-        page-break-after: avoid;
-      }
-
-      header::after {
-        display: none;
-      }
-
-      header h1 {
-        font-size: 16pt;
-        margin-bottom: 0.05cm;
-        text-shadow: none;
-        color: var(--color-primary);
-      }
-
-      header p {
-        font-size: 10pt;
-        color: #444;
-        text-transform: none;
-        letter-spacing: 0.05em;
-        margin-top: 0.05cm;
-        margin-bottom: 0;
-      }
-
-      /* Remove decorative elements */
-      section::before {
-        display: none;
-      }
-
-      h1::after {
-        display: none;
-      }
-
-      /* Compact section spacing */
-      section {
-        padding: 0.25cm 0;
-        border-bottom: 0.5pt solid #ddd;
-      }
-
-      section:first-of-type {
-        padding-top: 0;
-        page-break-before: avoid;
-      }
-
-      section:last-child {
-        border-bottom: none;
-      }
-
-      /* Clean headings */
-      h1 {
-        font-size: 12pt;
-        color: var(--color-primary);
-        margin-bottom: 0.25cm;
-        padding-bottom: 0.1cm;
-        border-bottom: 1pt solid var(--color-primary);
-      }
-
-      h2 {
-        font-size: 10pt;
-        color: #000;
-        margin-top: 0.25cm;
-        margin-bottom: 0.1cm;
-      }
-
-      h3 {
-        font-size: 9pt;
-        color: #333;
-        margin-top: 0.2cm;
-        margin-bottom: 0.1cm;
-        text-transform: none;
-        letter-spacing: 0;
-      }
-
-      p, li {
-        font-size: 9pt;
-        margin-bottom: 0.08cm;
-      }
-
-      ul, ol {
-        margin-bottom: 0.15cm;
-        padding-left: 0.4cm;
-      }
-
-      li {
-        margin-bottom: 0.03cm;
-      }
-
-      li::marker {
-        color: #333;
-      }
-
-      /* Simple link styling */
-      a {
-        color: #000;
-        border-bottom: none;
-      }
-
-      /* Show URLs after links */
-      a[href^="http"]::after {
-        content: " (" attr(href) ")";
-        font-size: 7pt;
-        color: #666;
-        word-break: break-all;
-      }
-
-      /* Don't show URL for DOI links (they're already visible) */
-      a[href^="https://doi.org"]::after {
-        content: none;
-      }
-
-      strong {
-        color: #000;
-      }
-
-      em {
-        color: #333;
-      }
-
-      /* Page break control */
-      h1, h2, h3 {
-        break-after: avoid-page;
-      }
-
-      /* Avoid orphans and widows */
-      p {
-        orphans: 3;
-        widows: 3;
-      }
-
-      /* Page margins */
-      @page {
-        margin: 1.5cm 1.5cm 1.5cm 1.5cm;
-        size: letter;
-      }
-
-      @page :first {
-        margin-top: 1.2cm;
+        font-size: 16px;
       }
     }
   </style>
 </head>
 <body>
-  <h1>No-Bake Awesome Cookies!</h1>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/cv/">CV</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+  </nav>
+
+  <header class="article-header">
+    <div class="article-header-content">
+      <h1>No-Bake Awesome Cookies!</h1>
+      <div class="article-meta">
+        <time datetime="2020-05-16">May 15, 2020</time>
+      </div>
+      <div class="leaf-accent"></div>
+    </div>
+  </header>
+
+  <main class="article-container">
+    <a href="/blog/" class="back-link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+      Back to all posts
+    </a>
+
+    <article class="article-content">
+      <h1>No-Bake Awesome Cookies!</h1>
 <p>Hi guys! I have a suuuuper E-Z, tummy yummy recipe for you today! It is no-bake vegetarian cocoa cookies… Mmm'M!<br>
 I got a pack of 'Green Banana Flour' on iHerb. There was really no other flour to choose from, but this was pretty cheap and is really healthy, so I'm glad I got it! It doesn't need to be cooked, either.</p>
 <p><img src="/media/posts/32/img_20200516_1748331067672569989719535-768x1024.jpg" alt=""></p>
@@ -495,8 +504,45 @@ Wash your hands. Take about a TBSP and roll it in your hands. Squeeze an almond 
 <p>Put it on a plate and do the next one. Put them in the fridge for a few hours until they have set. Enjoy!</p>
 <p>These are amazing cookies!! They are really filling and sweet but creamy, and they don't have that much fat in them. They have a lot of fiber and protein. And best of all, they taste incredible!!</p>
 
+
+      
+      <div class="article-tags">
+        <ul>
+          
+            
+          
+            
+            <li><a href="/blog/tags/chocolate/">#chocolate</a></li>
+            
+          
+            
+            <li><a href="/blog/tags/cookies/">#cookies</a></li>
+            
+          
+            
+            <li><a href="/blog/tags/cooking/">#cooking</a></li>
+            
+          
+            
+            <li><a href="/blog/tags/dessert/">#dessert</a></li>
+            
+          
+            
+            <li><a href="/blog/tags/diet/">#diet</a></li>
+            
+          
+            
+            <li><a href="/blog/tags/health/">#health</a></li>
+            
+          
+        </ul>
+      </div>
+      
+    </article>
+  </main>
+
   <footer>
-    <p>Updated 2024</p>
+    <p>&copy; NaN Sofia Penabaz-Wiley</p>
   </footer>
 </body>
 </html>

@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>English Paper Editing ・ 英語論文編集サービス</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cormorant:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Nature-inspired palette */
+      --color-forest: #2c4a3e;
+      --color-moss: #4a6d5c;
+      --color-sage: #7d9b8a;
+      --color-fern: #9bb5a5;
+      --color-mist: #d4e4db;
+      --color-cream: #faf9f7;
+      --color-warm-white: #fffffe;
+      --color-bark: #5c4d3c;
+      --color-stone: #6b6b6b;
+      --color-text: #3a3a3a;
+      --color-text-soft: #666666;
+
+      /* Typography */
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-accent: 'Cormorant', Georgia, serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--color-text);
+      background: var(--color-cream);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Page Header */
+    header.page-header {
+      background: linear-gradient(165deg, var(--color-forest) 0%, var(--color-moss) 60%, var(--color-sage) 100%);
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header.page-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        radial-gradient(ellipse at 20% 80%, rgba(255,255,255,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    header.page-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 500;
+      color: var(--color-warm-white);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    header.page-header p {
+      font-family: var(--font-accent);
+      font-size: 1.15rem;
+      color: var(--color-mist);
+      font-style: italic;
+      letter-spacing: 0.02em;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Navigation */
+    nav {
+      background: var(--color-warm-white);
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--color-mist);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem 3rem;
+      list-style: none;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    nav > ul > li {
+      position: relative;
+    }
+
+    nav a {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--color-stone);
+      text-decoration: none;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.25rem 0;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--color-moss);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--color-forest);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Dropdown Menu */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--color-warm-white);
+      border: 1px solid var(--color-mist);
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(44, 74, 62, 0.1);
+      padding: 0.5rem 0;
+      min-width: 200px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+      z-index: 200;
+      margin-top: 0.5rem;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .dropdown-menu li {
+      list-style: none;
+      margin: 0;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: none;
+      white-space: nowrap;
+    }
+
+    .dropdown-menu a::after {
+      display: none;
+    }
+
+    .dropdown-menu a:hover {
+      background: var(--color-mist);
+    }
+
+    /* CV Navigation */
+    nav.cv-nav {
+      background: var(--color-cream);
+      border-bottom: 1px solid var(--color-mist);
+      padding: 1rem 2rem;
+    }
+
+    nav.cv-nav ul {
+      gap: 0.25rem 1.5rem;
+    }
+
+    nav.cv-nav a {
+      font-size: 0.75rem;
+      color: var(--color-sage);
+      letter-spacing: 0.08em;
+    }
+
+    nav.cv-nav a:hover {
+      color: var(--color-forest);
+    }
+
+    /* Main Content */
+    main {
+      background: var(--color-warm-white);
+      box-shadow: 0 2px 30px rgba(44, 74, 62, 0.06);
+      border-radius: 0 0 4px 4px;
+      margin-bottom: 2rem;
+    }
+
+    section {
+      padding: 2.5rem 3rem;
+      border-bottom: 1px solid var(--color-mist);
+    }
+
+    section:last-child {
+      border-bottom: none;
+    }
+
+    /* Typography */
+    h1 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: var(--color-forest);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--color-sage);
+      display: inline-block;
+    }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--color-moss);
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+
+    section > h2:first-child,
+    h1 + h2 {
+      margin-top: 0;
+    }
+
+    h3 {
+      font-family: var(--font-accent);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--color-sage);
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-style: italic;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+
+    ul, ol {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
+      font-weight: 300;
+    }
+
+    li::marker {
+      color: var(--color-sage);
+    }
+
+    a {
+      color: var(--color-moss);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--color-forest);
+      border-bottom-color: var(--color-sage);
+    }
+
+    strong {
+      font-weight: 500;
+      color: var(--color-forest);
+    }
+
+    em {
+      color: var(--color-text-soft);
+      font-style: italic;
+    }
+
+    /* Date styling */
+    .date {
+      font-family: var(--font-accent);
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--color-sage);
+    }
+
+    .location {
+      font-weight: 400;
+      color: var(--color-text-soft);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2.5rem 2rem;
+      color: var(--color-stone);
+      font-size: 0.85rem;
+      font-family: var(--font-accent);
+      font-style: italic;
+      background: var(--color-cream);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header.page-header {
+        padding: 3rem 1.5rem;
+      }
+
+      header.page-header h1 {
+        font-size: 1.75rem;
+      }
+
+      nav ul {
+        gap: 0.25rem 1.5rem;
+      }
+
+      nav a {
+        font-size: 0.75rem;
+      }
+
+      nav.cv-nav {
+        padding: 0.75rem 1rem;
+      }
+
+      nav.cv-nav a {
+        font-size: 0.65rem;
+      }
+
+      section {
+        padding: 2rem 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.4rem;
+      }
+
+      body {
+        font-size: 16px;
+      }
+    }
+
+    /* Print Styles */
+    @media print {
+      /* Hide navigation and footer */
+      nav, footer {
+        display: none;
+      }
+
+      /* Reset background and colors */
+      :root {
+        --color-forest: #1a3c34;
+        --color-moss: #2d5a4a;
+        --color-text: #000;
+        --color-text-soft: #333;
+      }
+
+      body {
+        background: white;
+        font-size: 9.5pt;
+        line-height: 1.35;
+        color: #000;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .container {
+        max-width: 100%;
+        padding: 0;
+      }
+
+      main {
+        box-shadow: none;
+        border-radius: 0;
+        margin-bottom: 0;
+      }
+
+      /* Compact header for print */
+      header.page-header {
+        background: none !important;
+        color: var(--color-forest);
+        padding: 0 0 0.15cm 0;
+        margin-bottom: 0.15cm;
+        border-bottom: 1.5pt solid var(--color-forest);
+      }
+
+      header.page-header::before {
+        display: none;
+      }
+
+      header.page-header h1 {
+        font-size: 14pt;
+        margin-bottom: 0;
+        color: var(--color-forest);
+      }
+
+      header.page-header p {
+        font-size: 9pt;
+        color: #444;
+        font-style: normal;
+        margin-top: 0.05cm;
+        margin-bottom: 0;
+      }
+
+      /* Compact sections */
+      section {
+        padding: 0.2cm 0;
+        border-bottom: 0.5pt solid #ddd;
+      }
+
+      section:first-of-type {
+        padding-top: 0;
+      }
+
+      section:last-child {
+        border-bottom: none;
+      }
+
+      /* Clean headings */
+      h1 {
+        font-size: 11pt;
+        color: var(--color-forest);
+        margin-bottom: 0.2cm;
+        padding-bottom: 0.08cm;
+        border-bottom: 1pt solid var(--color-forest);
+      }
+
+      h2 {
+        font-size: 9.5pt;
+        color: #000;
+        margin-top: 0.2cm;
+        margin-bottom: 0.08cm;
+      }
+
+      h3 {
+        font-size: 8.5pt;
+        color: #333;
+        margin-top: 0.15cm;
+        margin-bottom: 0.08cm;
+        font-style: normal;
+      }
+
+      p, li {
+        font-size: 8.5pt;
+        margin-bottom: 0.05cm;
+        font-weight: 400;
+      }
+
+      ul, ol {
+        margin-bottom: 0.1cm;
+        padding-left: 0.35cm;
+      }
+
+      li {
+        margin-bottom: 0.02cm;
+      }
+
+      li::marker {
+        color: #333;
+      }
+
+      /* Simple link styling */
+      a {
+        color: #000;
+        border-bottom: none;
+      }
+
+      /* Show URLs after links */
+      a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 7pt;
+        color: #666;
+        word-break: break-all;
+      }
+
+      /* Don't show URL for DOI links */
+      a[href^="https://doi.org"]::after {
+        content: none;
+      }
+
+      strong {
+        color: #000;
+        font-weight: 600;
+      }
+
+      em {
+        color: #333;
+      }
+
+      /* Page break control */
+      h1, h2, h3 {
+        break-after: avoid-page;
+      }
+
+      section {
+        break-inside: avoid;
+      }
+
+      /* Avoid orphans and widows */
+      p {
+        orphans: 3;
+        widows: 3;
+      }
+
+      /* Page margins */
+      @page {
+        margin: 1.2cm 1.2cm 1.2cm 1.2cm;
+        size: letter;
+      }
+
+      @page :first {
+        margin-top: 1cm;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/cv/">CV</a></li>
+      <li class="dropdown">
+        <a href="/services/">Services</a>
+        <ul class="dropdown-menu">
+          <li><a href="/services/paper-editing/">Paper Editing</a></li>
+          <li><a href="/services/tarot/">Tarot Reading</a></li>
+          <li><a href="/services/tarot-jp/">タロット占い</a></li>
+        </ul>
+      </li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <h1>English Paper Editing ・ 英語論文編集サービス</h1>
+  </header>
+
+  <div class="container">
+    <main>
+      <section>
+        <h1>English Paper Editing ・ 英語論文編集サービス</h1>
+<p>(Scroll down for English version)</p>
+<ul>
+<li>
+<p>* 通常の校閲よりもリーズナブルな価格でお引き受け可能です</p>
+</li>
+<li>
+<p>* 原稿のやり取りはメール・オンライン・直接回収が可能です -文法・構造・理論性に関する編集をします</p>
+</li>
+<li>
+<p>* より良い校閲の結果を得るためのコミュニケーションを重視しています</p>
+</li>
+<li>
+<p>* 25年間の英文編集経験あり -米国英語を母国語としています -博士（学術）、ランドスケープ学分野が専門ですが、園芸学全般的の校閲が可能です</p>
+</li>
+<li>
+<p>* 校閲証明書の発行も可能です -校閲経験：医学・定量・定性・科学・社会学・心理学・環境・学際的な論文など</p>
+</li>
+<li>
+<p>* お支払い：現金・銀行振込・Google・PayPal・制度的支払いシステムなど</p>
+</li>
+<li>
+<p>* 一般的には300語あたり2,500円となります。</p>
+</li>
+</ul>
+<p>編集した原稿のリストを確認するには、ページの一番下までスクロールしてください。</p>
+<p>通信を行う為に以下のフォームに入力して、ご連絡ください。</p>
+<p><strong>Academic paper editing:</strong></p>
+<ul>
+<li>
+<p>* Correspondence in person, via email, video chat, or other online modes</p>
+</li>
+<li>
+<p>* Structure, logic, and English grammar</p>
+</li>
+<li>
+<p>* Communication with the client for refined results</p>
+</li>
+<li>
+<p>* 25 years experience, Native U.S. English, Ph.D. holder</p>
+</li>
+<li>
+<p>* 'Certificate of Editing' available upon request</p>
+</li>
+<li>
+<p>* Types of editing available: Medical, Quantitative, Qualitative, Sociological, Psychological, Environmental, Multidisciplinary, and other scientific papers.</p>
+</li>
+<li>
+<p>* Comments to help in improving English language usage</p>
+</li>
+<li>
+<p>* Fluent speaker of Japanese and Spanish</p>
+</li>
+<li>
+<p>* In general, the cost is 2,500 yen for every 300 words.</p>
+</li>
+<li>
+<p>* Payments: cash, bank transfer, Google Pay, PayPal, university payment system, etc.</p>
+</li>
+</ul>
+<p><a href="https://orcid.org/0000-0003-3326-0071">Orcid ID</a>, <a href="https://scholar.google.com/citations?user=qUE2n10AAAAJ&amp;hl=en">Google Scholar profile</a>, <a href="https://www.researchgate.net/profile/Sofia_Penabaz-Wiley2">Research Gate</a></p>
+<h2>For inquiries, email: drgreencastle @ gmail.com</h2>
+<p>(Remove the spaces before emailing.)</p>
+<h2><strong>Selected edited publications</strong> :</h2>
+<table>
+<thead>
+<tr>
+<th>Authors</th>
+<th>Publication Information</th>
+<th>Overview &amp; Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Brett Neese, Sofia Penabaz-Wiley</td>
+<td>Enacting Cybernetics. November 18, 2025, Vol. 3, No. 1, Article 2</td>
+<td>The Requisite Variety of Presence: A Cybernetic Intervention in Knowledge Work's Attention Crisis <a href="https://doi.org/10.58695/ec.20">https://doi.org/10.58695/ec.20</a></td>
+</tr>
+<tr>
+<td>Takato Koba (Editor-in-Chief)</td>
+<td>Chromosome Science. Vol 25(No. 1-2), 2022. Supplement to the Special Issue</td>
+<td>Chromosome Science 2022 Supplement to the Special Issue. <a href="https://doi.org/10.11352/scr.25.1">https://doi.org/10.11352/scr.25.1</a></td>
+</tr>
+<tr>
+<td>Kousuke Seki, Yukari Shimizu, Mai Hayashi, Hidenori Sassa, Shinji Kikuchi, Akane Taguchi, Fumika Chino, Eri Soga, Hiroaki Serizawa, and Takato Koba</td>
+<td>Euphytica, 2022. Vol. 218, No. 8, pp. 120</td>
+<td>Discovery and fine mapping of a novel resistance locus to Fusarium wilt race 2 in lettuce (Lactuca sativa L.) <a href="https://doi.org/10.1007/s10681-022-03058-0">https://doi.org/10.1007/s10681-022-03058-0</a></td>
+</tr>
+<tr>
+<td>Kyu Kyu Hmwe, Miwa Matsushima Yashima, and Kazuyuki Inubushi</td>
+<td>Tropical Agriculture and Development, 2022. Vol. 66, No. 1, pp. 1-11</td>
+<td>Nitrogen Transformation in Paddy Soil and Its Effect on Rice as Affected by Different N Sources and Water Regimes</td>
+</tr>
+<tr>
+<td><a href="https://doi.org/10.11248/jsta.66.1">https://doi.org/10.11248/jsta.66.1</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Yui Sonoke and Toshiyuki Usami</td>
+<td>Acta Horticulturae (2022)</td>
+<td>Environmental effects on the sporulation of Corynespora cassiicola in cucumber leaf spots <a href="https://researchmap.jp/toshiyukiusami/published_papers/39267906">https://researchmap.jp/toshiyukiusami/published_papers/39267906</a></td>
+</tr>
+<tr>
+<td>Nonoka Nagahama and Toshiyuki Usami</td>
+<td>Acta Horticulturae (2022)</td>
+<td>Drying leaves suppresses cucurbit downy mildew caused by Pseudoperonospora cubensis. <a href="https://researchmap.jp/toshiyukiusami/published_papers/39267900">https://researchmap.jp/toshiyukiusami/published_papers/39267900</a></td>
+</tr>
+<tr>
+<td>Haruka Kondo, Shinji Kikuchi, Ayumi Deguchi, Kazumitsu Miyoshi</td>
+<td>Cytologia, March 25, 2021. Vol. 86, No. 1, pp. 61-65</td>
+<td>New Cytogenetic Information of Wild Species and Cultivars in the Genus Epidendrum (Orchidaceae) <a href="https://doi.org/10.1508/cytologia.86.61">https://doi.org/10.1508/cytologia.86.61</a></td>
+</tr>
+<tr>
+<td>L.W. Wang, X.X. Li, Yasushi Todoroki, and Kondo, Satoru</td>
+<td>Acta Horticulturae 1312, 2021. Article 27, pp. 181-188</td>
+<td>Drought tolerance induced by the combination of abscisic acid and abscinazole in apple seedlings <a href="https://doi.org/10.17660/ActaHortic.2021.1312.27">https://doi.org/10.17660/ActaHortic.2021.1312.27</a></td>
+</tr>
+<tr>
+<td>Takato Koba (Editor-in-Chief)</td>
+<td>Chromosome Science, 70th Anniversary Special Edition. Vol 23 (No. 1-4) Special Issue 2020.</td>
+<td>Chromosome Science 2020 Special Edition, Biographies of 70 years of chromosome scientists in Japan, 1949-2019. 70th Anniversary Special Edition (Edited the entire journal and created the cover art). <a href="https://doi.org/10.11352/scr.23.Cover_1">https://doi.org/10.11352/scr.23.Cover_1</a> <a href="https://doi.org/10.11352/scr.23.1">https://doi.org/10.11352/scr.23.1</a></td>
+</tr>
+<tr>
+<td>Takayuki Amano and Masashi Nomura</td>
+<td>Journal of Insect Science, May 2020. Volume 20, Issue 3, pp.10</td>
+<td>(Partial edit) A Diagnostic Loop-Mediated Isothermal Amplification Method to Distinguish Helicoverpa armigera (Lepidoptera: Noctuidae) From Other Related Species in the New World <a href="https://doi.org/10.1093/jisesa/ieaa046">https://doi.org/10.1093/jisesa/ieaa046</a></td>
+</tr>
+<tr>
+<td>Wenzhu Cui, Akane Katayama, Hiroki Shimizu, Mamoru Taniguchi</td>
+<td>International Journal of Environmental Research and Public Health. June 2019, Vol: 16, Issue: 13</td>
+<td>Inhibitory Risks Affecting the Maintenance of Healthy Lifestyle Habits-A Study Based on Demographic Factors and Personality Traits. pii: E2322. doi: 10.3390/ijerph16132322. <a href="https://www.ncbi.nlm.nih.gov/pubmed/31262055">https://www.ncbi.nlm.nih.gov/pubmed/31262055</a></td>
+</tr>
+<tr>
+<td>(Edited Response to Reviewers) Enxi Liu, Terumasa Takahashi, Takuya Hitomi</td>
+<td>Springer Japan, Landscape and Ecological Engineering. Issue: April 2019</td>
+<td>Effect of pruning material compost on the nitrogen dynamic, soil microbial biomass, and plant biomass in different soil types</td>
+</tr>
+<tr>
+<td><a href="https://doi.org/10.1007/s11355-019-00392-9">https://doi.org/10.1007/s11355-019-00392-9</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Shunli Liu, Liyuan Wang, Xiao Tang Cai, Hui Zhou, Dan Yu, Zhiling Wang</td>
+<td>Medicine (Baltimore). May 2018, Vol: 97, Issue: 18, p: 0663</td>
+<td>Therapeutic benefits of ACTH and levetiracetam in STXBP1 encephalopathy with a de novo mutation: A case report and literature review doi: 10.1097/MD.0000000000010663 <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6392729/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6392729/</a></td>
+</tr>
+<tr>
+<td>Sofia M. Penabaz-Wiley &amp; Isami Kinoshita</td>
+<td>Urban and Regional Planning Review. November 2019, Vol. 6, pp: 125-147</td>
+<td>Suburban Residents' Psychological Ownership of Ethnobotanical Plants Found in Surrounding Green Spaces: A Case Study at Matsudo City's Nogikuno Housing Complex, Chiba Prefecture, Japan <a href="https://doi.org/10.14398/urpr.6.125">https://doi.org/10.14398/urpr.6.125</a></td>
+</tr>
+<tr>
+<td>Authors: Sofia M. Penabaz-Wiley, Aiko Eguchi &amp; Isami Kinoshita</td>
+<td>Architectural Institute of Japan. May 2019. Vol: 84, No: 759, pp: 1135-1144</td>
+<td>Psychological Ownership of Ethnobotany for Strengthening Social-Ecological Systems エスノボタニーからの心理的オーナーシップ醸成による社会・生態システム活性化に関する研究 —南伊豆町石廊崎地区における事例 <a href="https://doi.org/10.3130/aija.84.1135">https://doi.org/10.3130/aija.84.1135</a></td>
+</tr>
+<tr>
+<td>Sofia M. Penabaz-Wiley &amp; Isami Kinoshita</td>
+<td>Journal of Environmental Information Science. February, 2018, Vol: 2017, No: 2, pp: 25-36</td>
+<td>The Use of Ethnobotanical Landscape to Revitalize Rural Communities: Learning from Todmorden, England, Past and Present <a href="https://doi.org/10.11492/ceispapersen.2017.2_25">https://doi.org/10.11492/ceispapersen.2017.2_25</a></td>
+</tr>
+<tr>
+<td>Sofia M. Penabaz-Wiley, Mitsunari Terada, Isami Kinoshita</td>
+<td>Environment- Behaviour Proceedings Journal. August, 2018, Vol: 3, No: 8, pp: 12-21</td>
+<td>The Psychological Ownership of Ethnobotanicals through Education</td>
+</tr>
+<tr>
+<td><a href="https://doi.org/10.21834/e-bpj.v3i8.1415">https://doi.org/10.21834/e-bpj.v3i8.1415</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Penabaz-Wiley, Sofia M.</td>
+<td>HortResearch. March, 2017, Vol: 71, No. Edible Landscape, pp: 6-7.</td>
+<td>インクレディブル・エディブル Incredible Edible. <a href="https://doi.org/10.20776/S18808824-71-P6">https://doi.org/10.20776/S18808824-71-P6</a></td>
+</tr>
+<tr>
+<td>Penabaz-Wiley, Sofia M.</td>
+<td>HortResearch. March, 2017, Vol: 71, No. Edible Landscape, pp: 8-9.</td>
+<td>ドクダミを食べる Eating Houttuynia <a href="https://doi.org/10.20776/S18808824-71-P8">https://doi.org/10.20776/S18808824-71-P8</a></td>
+</tr>
+<tr>
+<td>Du, Wenwu Penabaz-Wiley, Sofia M. Njeru, Anthony Kinoshita, Isami</td>
+<td>Sustainability. June 24, 2015, Vol: 7, No. 7, pp: 8151-8177</td>
+<td>Models and approaches for integrating protected areas with their surroundings: A review of the literature <a href="https://doi.org/10.3390/su7078151">https://doi.org/10.3390/su7078151</a></td>
+</tr>
+<tr>
+<td>Chromosome Science cover design and artwork by Sofia M. Penabaz-Wiley (below).</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><img src="/media/posts/117/CS-Cover-2020-Final-1-566x800.png" alt=""></p>
+
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Sofia Penabaz-Wiley</p>
+  </footer>
+</body>
+</html>
