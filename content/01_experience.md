@@ -3,7 +3,7 @@
 ---
 
 ## Mentor
-**Puerto Vallarta, Jalisco, Mexico** | Nov 2023 – Present
+**Puerto Vallarta, Jalisco, Mexico** | Nov 2023 – Jan 2025
 
 - Mentor a master's student in Cybernetics (DePaul University) on publication methods, research practices, and complex systems
 - Serve as second author for conferences and publications
@@ -109,6 +109,7 @@
 **Waseda Saga Gakuen, Karatsu City, Saga Prefecture** | Apr 2011 – Mar 2014
 
 **Teaching**
+
 - Taught EFL to junior and senior high school students across three class types: Advanced English, team teaching, and ESS Club
 - Delivered ESL instruction to returnees and advanced learners in AP English
 - Designed AP curriculum: Critical Thinking, poetry, literature, literary elements, mistake analysis, essay writing, TOEFL iBT strategies, Philosophy, English history, typing, and vocabulary/grammar through film and literature
