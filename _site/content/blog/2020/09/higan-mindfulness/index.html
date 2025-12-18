@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Higan Mindfulness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Professional green palette inspired by ethnobotany & landscape */
+      --color-primary: #1a3c34;        /* Deep forest green */
+      --color-secondary: #2d5a4a;      /* Rich moss green */
+      --color-accent: #4a7c6f;         /* Sage accent */
+      --color-accent-light: #6b9d8f;   /* Light sage */
+      --color-highlight: #8fbc8f;      /* Soft botanical green */
+      --color-text: #2c3830;           /* Dark green-gray text */
+      --color-text-light: #5a6b62;     /* Muted green-gray */
+      --color-border: #d4ddd8;         /* Soft green-gray border */
+      --color-bg: #f7faf8;             /* Very subtle green-white */
+      --color-bg-alt: #ffffff;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--color-text);
+      background: var(--color-bg);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+      color: white;
+      margin-bottom: 0;
+      position: relative;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-highlight) 0%, var(--color-accent-light) 50%, var(--color-highlight) 100%);
+    }
+
+    header h1 {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    nav {
+      background: var(--color-bg-alt);
+      border-bottom: 1px solid var(--color-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1rem 0;
+      box-shadow: 0 2px 8px rgba(26, 60, 52, 0.06);
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem 2rem;
+      list-style: none;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    nav a {
+      color: var(--color-text-light);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.5rem 0;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--color-primary);
+      border-bottom-color: var(--color-accent);
+    }
+
+    main {
+      background: var(--color-bg-alt);
+      box-shadow: 0 4px 20px rgba(26, 60, 52, 0.08);
+      border-radius: 0 0 8px 8px;
+    }
+
+    section {
+      padding: 3rem 3rem;
+      border-bottom: 1px solid var(--color-border);
+      position: relative;
+    }
+
+    section:last-child {
+      border-bottom: none;
+    }
+
+    h1 {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      color: var(--color-primary);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 3px solid var(--color-accent);
+      display: inline-block;
+      position: relative;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 40%;
+      height: 3px;
+      background: var(--color-highlight);
+    }
+
+    h2 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--color-secondary);
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+
+    section > h2:first-child,
+    h1 + h2 {
+      margin-top: 0;
+    }
+
+    h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+
+    li::marker {
+      color: var(--color-accent);
+    }
+
+    a {
+      color: var(--color-accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    a:hover {
+      border-bottom-color: var(--color-accent);
+    }
+
+    strong {
+      font-weight: 600;
+      color: var(--color-secondary);
+    }
+
+    em {
+      color: var(--color-text-light);
+      font-style: italic;
+    }
+
+    .experience-entry h2 {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .date {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--color-accent);
+    }
+
+    .location {
+      font-weight: 400;
+      color: var(--color-text-light);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2.5rem 2rem;
+      color: var(--color-text-light);
+      font-size: 0.85rem;
+      background: var(--color-bg);
+      border-top: 1px solid var(--color-border);
+    }
+
+    /* Subtle accent bar on left of sections */
+    section::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 3rem;
+      bottom: 3rem;
+      width: 3px;
+      background: linear-gradient(180deg, var(--color-highlight) 0%, var(--color-accent-light) 50%, transparent 100%);
+      opacity: 0.4;
+      border-radius: 0 2px 2px 0;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 0.9rem;
+        letter-spacing: 0.1em;
+      }
+
+      section {
+        padding: 2rem 1.5rem;
+      }
+
+      section::before {
+        display: none;
+      }
+
+      nav ul {
+        gap: 0.25rem 1rem;
+      }
+
+      nav a {
+        font-size: 0.7rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media print {
+      /* Hide navigation and footer in print */
+      nav, footer {
+        display: none;
+      }
+
+      /* Reset to clean, simple black & white */
+      :root {
+        --color-primary: #1a3c34;
+        --color-text: #000;
+        --color-text-light: #444;
+        --color-border: #ccc;
+      }
+
+      body {
+        background: white;
+        font-size: 10pt;
+        line-height: 1.35;
+        color: #000;
+      }
+
+      .container {
+        max-width: 100%;
+        padding: 0;
+      }
+
+      main {
+        box-shadow: none;
+        border-radius: 0;
+      }
+
+      /* Clean, minimal header for print */
+      header {
+        background: none;
+        color: var(--color-primary);
+        padding: 0 0 0.2cm 0;
+        margin-bottom: 0.2cm;
+        border-bottom: 1.5pt solid var(--color-primary);
+        page-break-after: avoid;
+      }
+
+      header::after {
+        display: none;
+      }
+
+      header h1 {
+        font-size: 16pt;
+        margin-bottom: 0.05cm;
+        text-shadow: none;
+        color: var(--color-primary);
+      }
+
+      header p {
+        font-size: 10pt;
+        color: #444;
+        text-transform: none;
+        letter-spacing: 0.05em;
+        margin-top: 0.05cm;
+        margin-bottom: 0;
+      }
+
+      /* Remove decorative elements */
+      section::before {
+        display: none;
+      }
+
+      h1::after {
+        display: none;
+      }
+
+      /* Compact section spacing */
+      section {
+        padding: 0.25cm 0;
+        border-bottom: 0.5pt solid #ddd;
+      }
+
+      section:first-of-type {
+        padding-top: 0;
+        page-break-before: avoid;
+      }
+
+      section:last-child {
+        border-bottom: none;
+      }
+
+      /* Clean headings */
+      h1 {
+        font-size: 12pt;
+        color: var(--color-primary);
+        margin-bottom: 0.25cm;
+        padding-bottom: 0.1cm;
+        border-bottom: 1pt solid var(--color-primary);
+      }
+
+      h2 {
+        font-size: 10pt;
+        color: #000;
+        margin-top: 0.25cm;
+        margin-bottom: 0.1cm;
+      }
+
+      h3 {
+        font-size: 9pt;
+        color: #333;
+        margin-top: 0.2cm;
+        margin-bottom: 0.1cm;
+        text-transform: none;
+        letter-spacing: 0;
+      }
+
+      p, li {
+        font-size: 9pt;
+        margin-bottom: 0.08cm;
+      }
+
+      ul, ol {
+        margin-bottom: 0.15cm;
+        padding-left: 0.4cm;
+      }
+
+      li {
+        margin-bottom: 0.03cm;
+      }
+
+      li::marker {
+        color: #333;
+      }
+
+      /* Simple link styling */
+      a {
+        color: #000;
+        border-bottom: none;
+      }
+
+      /* Show URLs after links */
+      a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 7pt;
+        color: #666;
+        word-break: break-all;
+      }
+
+      /* Don't show URL for DOI links (they're already visible) */
+      a[href^="https://doi.org"]::after {
+        content: none;
+      }
+
+      strong {
+        color: #000;
+      }
+
+      em {
+        color: #333;
+      }
+
+      /* Page break control */
+      h1, h2, h3 {
+        break-after: avoid-page;
+      }
+
+      /* Avoid orphans and widows */
+      p {
+        orphans: 3;
+        widows: 3;
+      }
+
+      /* Page margins */
+      @page {
+        margin: 1.5cm 1.5cm 1.5cm 1.5cm;
+        size: letter;
+      }
+
+      @page :first {
+        margin-top: 1.2cm;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Higan Mindfulness</h1>
+<p>Yesterday I woke up really early, before dawn, and went to practice Mindfulness Meditation at the Buddhist temple near my house.</p>
+<p>I have been studying Mindfulness Meditation for about two years now.It was originally developed by Jon Kabbat Zinn at the Harvard Medical School for treating people with chronic diseases such as Cancer and chronic pain. Over the 30 years since it's inception, its uses have expanded to include everything from severe mental disorders to stress, and where it seems to work best is in the realm of the mind. Thousands of studies have supported the case for it's use in psychology to benefit society.</p>
+<p>There are many kinds of meditation, including guided meditation and chanting. I have practiced those, too. Before coming to Japan, I lived in San Francisco and tasted a variety of different kinds. But my first experiences with it I have to credit to my mother, who would sit with me and guide me into it as a child. I remember many times finding the light in my heart and finding peace as well. She says I used to sit for about 45 minutes in silence by myself, and some mysterious things happening, like once I came back and said that &quot;Grandma and Grandpa are on an airplane from Europe!&quot; Which was true, and I had no way of knowing it because we hadn't spoken to them and they hadn't told us. I remember in my teens meditating on the moon, and that was when I started to see beautiful circles of colored light, kind of like what I've heard can be seen on the screen in biofeedback. That happens a lot.</p>
+<p>But my recent studies in meditation haven't been spiritual. They are more geared towards regulating my emotions. Life can get stressful, for everyone, and it has been proven to be most effective for that. That being said, it isn't just for making you calm.</p>
+<p>The way it works is you sit in a comfortable place, preferably not too comfortable so that you don't go to sleep. You close your eyes, take a few deep breaths, and then just start to watch. You watch how you breathe. You scan your body from the tip top of your head to the soles of your feet. You notice your breath. You feel yourself becoming calmer and calmer, relaxing your body when you feel tense places, allowing your body to adjust into a peaceful state. You watch your breath. Come back to it. You listen carefully to the things around you. Further and further away. Then come back to the breath.</p>
+<p>Over the course of this, your mind will invariably wander, and that is wherein  the key lies. When you notice that your mind has wandered, you gently come back to the breathe. How it enters your body. How your stomach lifts. The tip of your nose where it comes in. And then your mind at some point will wander again. And you gently come back to the breath. You become <strong>mindful</strong> of your mind.</p>
+<p>This is the key to mindfulness meditation in the school in which I practice. It begins with watching the wandering mind. But with time and practice, one begins to notice their thoughts. You can label them, and then begin to put thoughts, memories, emotions, urges, into 'buckets' and label them. You begin to notice what it is that preoccupies your mind and causes you stress.</p>
+<p>And then here's the real kicker. Once you get good at that, you start to notice it when you aren't meditating. In the act of doing something out of character or experiencing something uncomfortable. You begin to realize how your reactions to life affect it. And that is something.</p>
+<p>With this knowledge, you can move forward in life. I would say that most of us live life without really examining how we live or why we do things. We are creatures of habit. But once you begin to notice how you affect your own life, you begin making different decisions.</p>
+<p><img src="/media/posts/43/20200920_0608036304579569441207090-600x800.jpg" alt=""></p>
+<p>So, anyway, back to the temple. So I figured it was Sunday, and the old monk had invited me to listen to the ancient drumming and bells anytime I wanted… But he does it at 6:30AM. So I had woken up early on a Sunday, and decided to do the things that people do on Sundays when we want to feel particularly close to God, whatever we may deem them to be. I went to the temple and began to meditate. It was locked, and he was not up yet, so sat on the steps. At one point, he opened the door slightly and I greeted him, but stayed there watching the morning. He played the drums and bells. The little birds came out. The sky changed, exploded in a dawn of color and then mellowed into a gentle morning. The leaves of the trees swayed, and I listened.</p>
+<p>The monk is pretty old, in his mid 80's, but so full of life, very energetic, and loves to teach. He told me about the equinox holidays in Japan. The spring and fall equinoxes are days of rest in this country. He says that the days surrounding them are important, too. The three days before and the three days after have an important Zen Buddhist function, and the entirety of the week is referred to as <strong><a href="https://en.m.wikipedia.org/wiki/Higan">Higan</a></strong>.</p>
+<p>During the three days before the equinox, one should practice these three things: you should be generous with others, keep your promises, and strive to be patient and open-minded.</p>
+<p>After the equinox, you should: gaman (refrain from excesses and persevere), meditate, and study the wisdom of the scriptures (here, he emphasized that it should not be 'human' wisdom, because humans are not pure of thought).</p>
+<p>After he told me, I thought that maybe this is why many Japanese people consider patience, quiet listening, and perseverance to be essential elements of their culture.</p>
+<p><img src="/media/posts/43/20200920_060814-scaled.jpg" alt=""></p>
+
+  <footer>
+    <p>Updated 2024</p>
+  </footer>
+</body>
+</html>

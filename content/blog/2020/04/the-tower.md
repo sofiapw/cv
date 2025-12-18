@@ -1,0 +1,40 @@
+---
+title: "The Tower"
+date: 2020-04-11
+modified: 2025-12-01
+type: post
+slug: the-tower
+author: 1
+tags:
+  - art
+  - Coronavirus
+  - CoVID-19
+  - Earth
+  - environment
+  - healing
+  - magic
+  - occult
+  - psychology
+  - RemediosVaro
+  - self-love
+  - surrealism
+  - symbolism
+  - Tarot
+  - Traditional
+---
+
+# The Tower
+
+![](/media/posts/26/wp-15865945771776747913850284301298-scaled.jpg)
+
+I found this postcard lying on the floor today... it became today's esoteric reading. In this painting by the surrealist Spanish painter Remedios Varo, she captured part of the essence of what I believe is appropriate to the moment.
+
+I think this painting was a twist on the tarot card "The Tower." In the original image, people jump from a burning tower in terror as their world crumbles around them. It is one of the more dreaded cards in the deck, with a meaning of the death of something or extreme changes. A falling apart of what is known.
+
+This painting is done with he same perspective, but with the tower having crumbled, its pieces strewn upon the earth. A flutist is, with music, magically encouraging their piecing back into place in the tower, pulling the world back together.
+
+The Coronavirus pulled many people out of their towers, where they thought they were safe and had their lives. They suddenly tumbled down, their known existence in shambles, the tower of their lives ruined. But I see many creative people pulling themselves up with a musical force from the heart, communicating about the true necessities of the world and our own lives.
+
+The Tower card of the tarot also symbolizes new beginnings. With the end of something comes the beginning of something new. Thus, in my readings I always bring this point up. The Tower card need not be feared, more it is a call to courage and determination in the face of great change.
+
+This painting by Varo also says that what is needed is creativity and listening to the heart. We can all heal but we need to get creative and listen to what is needed calling from the dark recesses of our silent souls and the silent voice of this beautiful Earth that we live upon. True healing will come when we can face what we truly need to heal: ourselves and our home.

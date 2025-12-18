@@ -1,0 +1,33 @@
+---
+title: "Today's Gifts - Paul &amp; the Wixarika"
+date: 2020-04-12
+modified: 2025-12-01
+type: post
+slug: todays-gifts-paul-andamp-the-wixarika
+author: 1
+---
+
+# Today's Gifts - Paul &amp; the Wixarika
+
+![](/media/posts/27/wp-15866734456352151499554968300906-scaled.jpg)
+
+With the silence around me, I have been cleaning things up, cleaning out, and trying to reconnect with my inner self. Today I found these paper treasures that I have not been able to let go of. As for the book, I think it is a good idea to read in the morning for a few minutes before doing anything on my smartphone or PC.
+
+Dr. Hedberg's account of meeting the Wixarika (Huichol Indians) for the first time in San Blas, stumbling in on a sacred ritual, and then his very strong statement about how we have ethnocentrified their perceptions of what we consider "Gods" is intense. He says that the indigenous people did not say "The Corn Goddess" but rather "Mother Corn," nor the "Sky God" but "Father Sky," and so on, because they did not use the word "God" they used terms for relatives. He states, in italics for emphasis, "to signify nature relatives with that word ("God") is the biggest etymological mistake of the last millennium." I would say this is because the cultural perception of relatives creates a kind of relationship that is much more intimate and a sense of responsibility towards them and an understanding if they are deeply connected with us.
+
+He says, "through their activities and storytelling... They were not talking about or two gods but their relatives in the surrounding nature. they're communicating efforts were aiming at keeping the balance in the mutual dependence between man and their nature relatives the help of him they needed so badly for their existence."
+
+He also mentions the demise of man at the point when he moved from being a hunter-gatherer to being an agricultural and then industrial society. It's not the first time I've heard this, there's a piece by Jared Diamond, who wrote the best-seller "Guns, Germs and Steel," about the deviation and demise of man through what Western education has almost always considered evolution, in his piece in Discover Magazine entitled "The Worst Mistake in the History of the Human Race." When I read it, it rattled me to my senses and solidified awareness regarding the topic.
+
+The editorial piece, from the magazine Clean Slate, published by the Center for Alternative Technology (CAT) in the UK, was written by my dear friend Paul Allen. Though it was written a few years ago, I find it appropriate to meditate upon at this point in time, when we sit quietly in our homes, fearfully attempting to thwart an unseen killer.
+
+He says, "... The challenges are significant, but so are the opportunities... Simply trying to stimulate consumer-spending... won't really solve our long-term economic challenges. However, transforming our consumer-driven economy into something more appropriate to the realities of the 21st century is also no small undertaking -- but this is where the sheer scale of the energy transition becomes its biggest advantage any investment in either generating or saving energy offers a tangible economic return whilst also creating secure long-term employment for a great many people." As I have seen from the market in the US just within the past year, there is a shift increasingly occurring towards Green Investment... However, what is Green Investment? There are various companies attempting to go green, but then there are many more with tongue-in-cheek greenwashing that really do nothing green at all and are just riding the wave like it is a fad. Perhaps some issues stem from the terminologies used in business, which brings us back to linguistics and culture.
+
+In any culture, linguistic psychology creates reality. As an ethnobotanist, I must respect the indigenous naming of a plant in order to more deeply understand their perceptions of it, so in publications I list the original names and meanings. Linguists state that you cannot learn a language without knowing the culture. And John Hedberg recognized the need to return the true meaning of relatives in nature from the bastardization to "gods."
+
+Thus, there is a need for translation, one might say, to business language, for the meaning of ecological balance and the preciousness of those things that are not worth money to be understood. Economists have been trying to create new systems for years now that will create a balance, but without the cultural understanding built within business language, there may be little space for a long-term resolution.
+
+My hope is that business will begin to evolve due to the pressure to green, just as languages and cultures evolve.
+
+I have had the pleasure of consulting mentors and businesses regarding social-ecological systems and how to integrate businesses into ecology to make them more green, but I felt as though, although well-received, the understanding was not complete. It is definitely a work in progress on both sides. I only wish it were going more quickly, for the Earth we live upon and its finite resources of life, land and sky.
+

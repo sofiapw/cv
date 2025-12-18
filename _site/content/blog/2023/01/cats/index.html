@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cats</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Professional green palette inspired by ethnobotany & landscape */
+      --color-primary: #1a3c34;        /* Deep forest green */
+      --color-secondary: #2d5a4a;      /* Rich moss green */
+      --color-accent: #4a7c6f;         /* Sage accent */
+      --color-accent-light: #6b9d8f;   /* Light sage */
+      --color-highlight: #8fbc8f;      /* Soft botanical green */
+      --color-text: #2c3830;           /* Dark green-gray text */
+      --color-text-light: #5a6b62;     /* Muted green-gray */
+      --color-border: #d4ddd8;         /* Soft green-gray border */
+      --color-bg: #f7faf8;             /* Very subtle green-white */
+      --color-bg-alt: #ffffff;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--color-text);
+      background: var(--color-bg);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+      color: white;
+      margin-bottom: 0;
+      position: relative;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-highlight) 0%, var(--color-accent-light) 50%, var(--color-highlight) 100%);
+    }
+
+    header h1 {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    nav {
+      background: var(--color-bg-alt);
+      border-bottom: 1px solid var(--color-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1rem 0;
+      box-shadow: 0 2px 8px rgba(26, 60, 52, 0.06);
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem 2rem;
+      list-style: none;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    nav a {
+      color: var(--color-text-light);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.5rem 0;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--color-primary);
+      border-bottom-color: var(--color-accent);
+    }
+
+    main {
+      background: var(--color-bg-alt);
+      box-shadow: 0 4px 20px rgba(26, 60, 52, 0.08);
+      border-radius: 0 0 8px 8px;
+    }
+
+    section {
+      padding: 3rem 3rem;
+      border-bottom: 1px solid var(--color-border);
+      position: relative;
+    }
+
+    section:last-child {
+      border-bottom: none;
+    }
+
+    h1 {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      color: var(--color-primary);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 3px solid var(--color-accent);
+      display: inline-block;
+      position: relative;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 40%;
+      height: 3px;
+      background: var(--color-highlight);
+    }
+
+    h2 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--color-secondary);
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+
+    section > h2:first-child,
+    h1 + h2 {
+      margin-top: 0;
+    }
+
+    h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+
+    li::marker {
+      color: var(--color-accent);
+    }
+
+    a {
+      color: var(--color-accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    a:hover {
+      border-bottom-color: var(--color-accent);
+    }
+
+    strong {
+      font-weight: 600;
+      color: var(--color-secondary);
+    }
+
+    em {
+      color: var(--color-text-light);
+      font-style: italic;
+    }
+
+    .experience-entry h2 {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .date {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--color-accent);
+    }
+
+    .location {
+      font-weight: 400;
+      color: var(--color-text-light);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2.5rem 2rem;
+      color: var(--color-text-light);
+      font-size: 0.85rem;
+      background: var(--color-bg);
+      border-top: 1px solid var(--color-border);
+    }
+
+    /* Subtle accent bar on left of sections */
+    section::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 3rem;
+      bottom: 3rem;
+      width: 3px;
+      background: linear-gradient(180deg, var(--color-highlight) 0%, var(--color-accent-light) 50%, transparent 100%);
+      opacity: 0.4;
+      border-radius: 0 2px 2px 0;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 0.9rem;
+        letter-spacing: 0.1em;
+      }
+
+      section {
+        padding: 2rem 1.5rem;
+      }
+
+      section::before {
+        display: none;
+      }
+
+      nav ul {
+        gap: 0.25rem 1rem;
+      }
+
+      nav a {
+        font-size: 0.7rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media print {
+      /* Hide navigation and footer in print */
+      nav, footer {
+        display: none;
+      }
+
+      /* Reset to clean, simple black & white */
+      :root {
+        --color-primary: #1a3c34;
+        --color-text: #000;
+        --color-text-light: #444;
+        --color-border: #ccc;
+      }
+
+      body {
+        background: white;
+        font-size: 10pt;
+        line-height: 1.35;
+        color: #000;
+      }
+
+      .container {
+        max-width: 100%;
+        padding: 0;
+      }
+
+      main {
+        box-shadow: none;
+        border-radius: 0;
+      }
+
+      /* Clean, minimal header for print */
+      header {
+        background: none;
+        color: var(--color-primary);
+        padding: 0 0 0.2cm 0;
+        margin-bottom: 0.2cm;
+        border-bottom: 1.5pt solid var(--color-primary);
+        page-break-after: avoid;
+      }
+
+      header::after {
+        display: none;
+      }
+
+      header h1 {
+        font-size: 16pt;
+        margin-bottom: 0.05cm;
+        text-shadow: none;
+        color: var(--color-primary);
+      }
+
+      header p {
+        font-size: 10pt;
+        color: #444;
+        text-transform: none;
+        letter-spacing: 0.05em;
+        margin-top: 0.05cm;
+        margin-bottom: 0;
+      }
+
+      /* Remove decorative elements */
+      section::before {
+        display: none;
+      }
+
+      h1::after {
+        display: none;
+      }
+
+      /* Compact section spacing */
+      section {
+        padding: 0.25cm 0;
+        border-bottom: 0.5pt solid #ddd;
+      }
+
+      section:first-of-type {
+        padding-top: 0;
+        page-break-before: avoid;
+      }
+
+      section:last-child {
+        border-bottom: none;
+      }
+
+      /* Clean headings */
+      h1 {
+        font-size: 12pt;
+        color: var(--color-primary);
+        margin-bottom: 0.25cm;
+        padding-bottom: 0.1cm;
+        border-bottom: 1pt solid var(--color-primary);
+      }
+
+      h2 {
+        font-size: 10pt;
+        color: #000;
+        margin-top: 0.25cm;
+        margin-bottom: 0.1cm;
+      }
+
+      h3 {
+        font-size: 9pt;
+        color: #333;
+        margin-top: 0.2cm;
+        margin-bottom: 0.1cm;
+        text-transform: none;
+        letter-spacing: 0;
+      }
+
+      p, li {
+        font-size: 9pt;
+        margin-bottom: 0.08cm;
+      }
+
+      ul, ol {
+        margin-bottom: 0.15cm;
+        padding-left: 0.4cm;
+      }
+
+      li {
+        margin-bottom: 0.03cm;
+      }
+
+      li::marker {
+        color: #333;
+      }
+
+      /* Simple link styling */
+      a {
+        color: #000;
+        border-bottom: none;
+      }
+
+      /* Show URLs after links */
+      a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 7pt;
+        color: #666;
+        word-break: break-all;
+      }
+
+      /* Don't show URL for DOI links (they're already visible) */
+      a[href^="https://doi.org"]::after {
+        content: none;
+      }
+
+      strong {
+        color: #000;
+      }
+
+      em {
+        color: #333;
+      }
+
+      /* Page break control */
+      h1, h2, h3 {
+        break-after: avoid-page;
+      }
+
+      /* Avoid orphans and widows */
+      p {
+        orphans: 3;
+        widows: 3;
+      }
+
+      /* Page margins */
+      @page {
+        margin: 1.5cm 1.5cm 1.5cm 1.5cm;
+        size: letter;
+      }
+
+      @page :first {
+        margin-top: 1.2cm;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Cats</h1>
+<p>So, I read a lot of academic medical papers, especially regarding nutrition. It seems we're always learning more about how the human body works. But, I realized today that I also read a lot of papers about cats. This is because I have two of them and they're elderly with problems. I figured that since I read so much, it might be beneficial to other people to write about what I learned sometimes. So I thought I'd share what I'm learning about now.</p>
+<p>Currently one of my cats, Bina, has a problem with possible pancreatitis. Up until a few days ago, she had been losing weight and she looked really bad. Her fur was getting scruffy and she was listless and vomiting almost every meal. She was scratching her neck and had some sort of rash that would get worse with the low-fat diet food I was giving her.</p>
+<p>I haven't taken her in for her ultrasound yet, but after a visit the the vet with a blood test her lipase levels were really high. I started searching around on the web for papers referencing what to do in cases of irritable bowel disease, pancreatitis, feline regurgitation, and high levels of lipase. I found quite a bit of stuff. The most shocking was that almost everywhere I looked, it said that many vets say not to give cats in this kind of situation fats, but that although this applies to humans and other animals, it doesn't apply to cats. Their internal organs work differently... Thus, sometimes there are anomalies. And in this case, almost all of the places said that you can give cats fats even if they have high levels of serum lipase. Even though that was the only recommendation by the vet. No fats, and to limit her to kibbles.</p>
+<p>Now, a lot of other places said that you're lucky if you can get your cat to eat at this point. Also, cats should be on a liquid diet so that they can get their hydration back.</p>
+<p>I pulled on her neck skin, and it slowly went back down to normal. Wow, she's pretty dehydrated. So at that point, I pretty much threw everything that I had been told out the window and started doing my own research.</p>
+<p>I use triangulation when I'm researching information on the web. That means, that at least three veterinarians or academic sources have to say something similar in order for me to accept it as possible fact. Also, the words can't be plagiarized and each has to be a different academic paper. The information should preferably be newer.</p>
+<p>What I found was that the most common treatment for the situation is to ultimately treat them with antioxidants and to rehydrate the cat with a potassium rehydration liquid first, because usually they are dehydrated. Sometimes this involves force-feeding because they refuse to eat, and some places they don't even worry about what they're feeding the cat because cats can go into a dangerous bodily shock if they don't eat for too long. In general, my cat doesn't have too bad of problems eating; she's a glutton. But my choice of food for her has mostly been dry kibbles, with wet food at night. Almost every day she throws up. So what I did was change her diet to wet food, with vitamin supplements added.</p>
+<p>One hint was the vitamin B complex. I was not shocked to find that vitamin B complex, especially folic acid can be helpful. Also, she is particularly low because I give her Coenzyme Q10 for her heart problems (5 years ago she almost died -- within 2 weeks of coenzyme Q10 treatment she was fine)... But Coenzyme Q10 uses Vitamin B during absorption into the system... Even though I supplement the cats with Yeast flakes, I guess it isn't enough, because the other day I found her attacking a B vitamin pill that I had dropped, and devouring the contents... So B Complex was in.</p>
+<p>The supplement that's most recommended for her situation is Sam-e. Other than that, vitamins E, C, K2, A, B vitamins, and other antioxidants are recommended. Other than that, some places recommend probiotics, and in humans with pancreatitis they recommend using digestive enzymes to aid the pancreas in digestion while balance is returning but it hasn't been tested in cats.</p>
+<p>I mashed up her wet food and mixed in B complex and vitamin C and added almost as much water as food. She gobbled it up. Within the day, she was already starting to look less anorexic and her nape skin was falling a little faster. Within 3 days she has almost returned to normal. Her eyes are sparkling, her nape skin can be lifted and drops into place almost immediately, and she looks just so much better. She wants to race me and play. I'm so happy she feels better.</p>
+<p>I'm waiting for the Sam-e, Vitamin E, and an antioxidant set of resverotol with vitamin A to arrive. I've been giving her small amounts of K2, C, and digestive enzymes with lots of water. She gets her regular Coenzyme Q10 and the new addition of vitamin B Complex, but I have tapered off the dosage as she took a lot for a couple of days. I check the dosages and vitamin types before feeding them to the cats. Some vitamins are dangerous for cats.</p>
+<p>I'm considering the raw or semi-raw food diet, but at this point, high liquid wet food seems like it may work. I know it has more chemicals, but it also has a lot of water and the cat will eat it... That being said, for the long-term I am considering different raw food diets at the moment for both of them.</p>
+<p><img src="/media/posts/50/20230103_0225095266912650301392829-600x800.jpg" alt="">Bina</p>
+
+  <footer>
+    <p>Updated 2024</p>
+  </footer>
+</body>
+</html>

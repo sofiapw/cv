@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to get better at sketching</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Professional green palette inspired by ethnobotany & landscape */
+      --color-primary: #1a3c34;        /* Deep forest green */
+      --color-secondary: #2d5a4a;      /* Rich moss green */
+      --color-accent: #4a7c6f;         /* Sage accent */
+      --color-accent-light: #6b9d8f;   /* Light sage */
+      --color-highlight: #8fbc8f;      /* Soft botanical green */
+      --color-text: #2c3830;           /* Dark green-gray text */
+      --color-text-light: #5a6b62;     /* Muted green-gray */
+      --color-border: #d4ddd8;         /* Soft green-gray border */
+      --color-bg: #f7faf8;             /* Very subtle green-white */
+      --color-bg-alt: #ffffff;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--color-text);
+      background: var(--color-bg);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+      color: white;
+      margin-bottom: 0;
+      position: relative;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-highlight) 0%, var(--color-accent-light) 50%, var(--color-highlight) 100%);
+    }
+
+    header h1 {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    nav {
+      background: var(--color-bg-alt);
+      border-bottom: 1px solid var(--color-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1rem 0;
+      box-shadow: 0 2px 8px rgba(26, 60, 52, 0.06);
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem 2rem;
+      list-style: none;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    nav a {
+      color: var(--color-text-light);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.5rem 0;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--color-primary);
+      border-bottom-color: var(--color-accent);
+    }
+
+    main {
+      background: var(--color-bg-alt);
+      box-shadow: 0 4px 20px rgba(26, 60, 52, 0.08);
+      border-radius: 0 0 8px 8px;
+    }
+
+    section {
+      padding: 3rem 3rem;
+      border-bottom: 1px solid var(--color-border);
+      position: relative;
+    }
+
+    section:last-child {
+      border-bottom: none;
+    }
+
+    h1 {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      color: var(--color-primary);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 3px solid var(--color-accent);
+      display: inline-block;
+      position: relative;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 40%;
+      height: 3px;
+      background: var(--color-highlight);
+    }
+
+    h2 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--color-secondary);
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+
+    section > h2:first-child,
+    h1 + h2 {
+      margin-top: 0;
+    }
+
+    h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+
+    li::marker {
+      color: var(--color-accent);
+    }
+
+    a {
+      color: var(--color-accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    a:hover {
+      border-bottom-color: var(--color-accent);
+    }
+
+    strong {
+      font-weight: 600;
+      color: var(--color-secondary);
+    }
+
+    em {
+      color: var(--color-text-light);
+      font-style: italic;
+    }
+
+    .experience-entry h2 {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .date {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--color-accent);
+    }
+
+    .location {
+      font-weight: 400;
+      color: var(--color-text-light);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2.5rem 2rem;
+      color: var(--color-text-light);
+      font-size: 0.85rem;
+      background: var(--color-bg);
+      border-top: 1px solid var(--color-border);
+    }
+
+    /* Subtle accent bar on left of sections */
+    section::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 3rem;
+      bottom: 3rem;
+      width: 3px;
+      background: linear-gradient(180deg, var(--color-highlight) 0%, var(--color-accent-light) 50%, transparent 100%);
+      opacity: 0.4;
+      border-radius: 0 2px 2px 0;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 0.9rem;
+        letter-spacing: 0.1em;
+      }
+
+      section {
+        padding: 2rem 1.5rem;
+      }
+
+      section::before {
+        display: none;
+      }
+
+      nav ul {
+        gap: 0.25rem 1rem;
+      }
+
+      nav a {
+        font-size: 0.7rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media print {
+      /* Hide navigation and footer in print */
+      nav, footer {
+        display: none;
+      }
+
+      /* Reset to clean, simple black & white */
+      :root {
+        --color-primary: #1a3c34;
+        --color-text: #000;
+        --color-text-light: #444;
+        --color-border: #ccc;
+      }
+
+      body {
+        background: white;
+        font-size: 10pt;
+        line-height: 1.35;
+        color: #000;
+      }
+
+      .container {
+        max-width: 100%;
+        padding: 0;
+      }
+
+      main {
+        box-shadow: none;
+        border-radius: 0;
+      }
+
+      /* Clean, minimal header for print */
+      header {
+        background: none;
+        color: var(--color-primary);
+        padding: 0 0 0.2cm 0;
+        margin-bottom: 0.2cm;
+        border-bottom: 1.5pt solid var(--color-primary);
+        page-break-after: avoid;
+      }
+
+      header::after {
+        display: none;
+      }
+
+      header h1 {
+        font-size: 16pt;
+        margin-bottom: 0.05cm;
+        text-shadow: none;
+        color: var(--color-primary);
+      }
+
+      header p {
+        font-size: 10pt;
+        color: #444;
+        text-transform: none;
+        letter-spacing: 0.05em;
+        margin-top: 0.05cm;
+        margin-bottom: 0;
+      }
+
+      /* Remove decorative elements */
+      section::before {
+        display: none;
+      }
+
+      h1::after {
+        display: none;
+      }
+
+      /* Compact section spacing */
+      section {
+        padding: 0.25cm 0;
+        border-bottom: 0.5pt solid #ddd;
+      }
+
+      section:first-of-type {
+        padding-top: 0;
+        page-break-before: avoid;
+      }
+
+      section:last-child {
+        border-bottom: none;
+      }
+
+      /* Clean headings */
+      h1 {
+        font-size: 12pt;
+        color: var(--color-primary);
+        margin-bottom: 0.25cm;
+        padding-bottom: 0.1cm;
+        border-bottom: 1pt solid var(--color-primary);
+      }
+
+      h2 {
+        font-size: 10pt;
+        color: #000;
+        margin-top: 0.25cm;
+        margin-bottom: 0.1cm;
+      }
+
+      h3 {
+        font-size: 9pt;
+        color: #333;
+        margin-top: 0.2cm;
+        margin-bottom: 0.1cm;
+        text-transform: none;
+        letter-spacing: 0;
+      }
+
+      p, li {
+        font-size: 9pt;
+        margin-bottom: 0.08cm;
+      }
+
+      ul, ol {
+        margin-bottom: 0.15cm;
+        padding-left: 0.4cm;
+      }
+
+      li {
+        margin-bottom: 0.03cm;
+      }
+
+      li::marker {
+        color: #333;
+      }
+
+      /* Simple link styling */
+      a {
+        color: #000;
+        border-bottom: none;
+      }
+
+      /* Show URLs after links */
+      a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 7pt;
+        color: #666;
+        word-break: break-all;
+      }
+
+      /* Don't show URL for DOI links (they're already visible) */
+      a[href^="https://doi.org"]::after {
+        content: none;
+      }
+
+      strong {
+        color: #000;
+      }
+
+      em {
+        color: #333;
+      }
+
+      /* Page break control */
+      h1, h2, h3 {
+        break-after: avoid-page;
+      }
+
+      /* Avoid orphans and widows */
+      p {
+        orphans: 3;
+        widows: 3;
+      }
+
+      /* Page margins */
+      @page {
+        margin: 1.5cm 1.5cm 1.5cm 1.5cm;
+        size: letter;
+      }
+
+      @page :first {
+        margin-top: 1.2cm;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>How to get better at sketching</h1>
+<p>Recently, I joined a sketch group with some lovely ladies here in Japan. One of them asked for some tips on how to improve her sketching.</p>
+<p>When I see everyone's drawings, they are so creative. Even though most of us are seeing things from the same angle since we are on video chat, we use different techniques, feelings, textures and media, to complete the drawings. For me, everyone's drawings are unique and beautiful. But I think that the most important thing is that they believe that about their own work. Let me explain.</p>
+<p><img src="/media/posts/45/IMG_20201102_121955_220-1001x800.jpg" alt="">Still of Cabosu &amp; an Apple</p>
+<p>A few things helped me learn how to sketch better.</p>
+<p>One was when I took an extra year of college to study art and music. One of my teachers trained us to do an activity on the shorter sketches (2-3 minutes) where we could not look at the paper, except to reorient. We had to sketch while looking only at the subject. No only that, we were not to take the pencil off the paper, but to trace the form of the object over and over. Of course, the sketches looked horrible, but the feeling was different... It became much easier to understand what we were looking at.</p>
+<p>Another was a wonderful book by my favorite philosopher <a href="https://en.wikipedia.org/wiki/Frederick_Franck">Frederick Franck</a>, called &quot;<a href="https://www.michelledujardin.com/zen-drawing">The Zen of Seeing</a>.&quot; This wonderful book teaches one how to really look at the subject without judgement.</p>
+<p>Finally, I had the extremely good fortune to be given a trip by my Austrian grandfather as a graduation present at 22. It was a month-long Eurail Pass. In every city I went I visited at least one if not multiple museums. I learned from the great masters, tracing their wisdom in my sketchbook. There is absolutely nothing like looking at the real thing to understand which line came first. That month was probably the greatest lesson of all in studying the human form in particular.</p>
+<p>I also studied watercolor in college, and then took three years of Sumi-E from a master -- <a href="https://instagram.com/shoshikodes?igshid=121wfkqu1g88e">Shoshiko Sensei</a> -- in Kurume. He taught me that in just a few carefully planned strokes, the essence of something can become filled with spirit and detail. Some wonderful artists like <a href="https://instagram.com/shoshikodes?igshid=121wfkqu1g88e">the Harusakis</a> demonstrate specific techniques such as extensive layering and patience to create some amazing effects. Watercolor, and especially Sumi-E, force the artist to surrender to the medium. It is impossible to erase what one has created. This makes it a kind of meditation and is training in allowing things to happen the way they will, because you cannot erase your mistakes.</p>
+<p>The rest was just practice, practice, practice. And not judging whether something was good or not, just letting it be what it was.</p>
+<p>I am definitely not the best at sketching. My lines are not straight and I shake and there are probably a billion things I could do better.</p>
+<p>But it's like meditation. Each day is different, and appreciating the art as a gift I have been given in time and space, as an opportunity to live, changes any judgement I might have to gratitude. I'm so thankful to this group, to the organizer for putting it together and to everyone for making it a community. I was doing maybe one sketch every six months. Now it's a few a week.</p>
+<p>So, in short, I recommend reading that <a href="https://www.amazon.com/Zen-Seeing-Drawing-Meditation/dp/0394719689/ref=pd_aw_sbs_14_1/138-0009044-6923159?_encoding=UTF8&amp;pd_rd_i=0394719689&amp;pd_rd_r=e56f3e15-06ec-47d8-a02f-51509830e722&amp;pd_rd_w=0crcd&amp;pd_rd_wg=19Lzl&amp;pf_rd_p=b3270d36-43b9-4db6-bead-e7bd5014e5a2&amp;pf_rd_r=XSA0WC5X3NDBRY5BSXC8&amp;psc=1&amp;refRID=XSA0WC5X3NDBRY5BSXC8">book</a>. Try tracing without looking at the paper once per session. Going to the museums in the big city (if you have the energy) and sketching would be an enjoyable and educational past time -- especially considering we near Tokyo have the very good fortune of being next to one of the greatest art-loving cities of the world, with perhaps hundreds of museums.</p>
+<p>But most of all, I would say to try to consider the art as something that is a gift that you were given, to hold gratitude towards it. That will remove the judgements surrounding it and allow you to develop without faltering at each step.</p>
+<p>Just as we tell our students that to improve in English they need to make mistakes, we could look at life and art with the same eyes and say that in order to move forward it is important to take each step as a lesson, appreciate it, and move on. This will be the wind in your sails leading you to lands unknown.</p>
+<p><img src="/media/posts/45/20201019_120442-1067x800.jpg" alt=""></p>
+
+  <footer>
+    <p>Updated 2024</p>
+  </footer>
+</body>
+</html>
