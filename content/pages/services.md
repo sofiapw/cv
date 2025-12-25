@@ -7,8 +7,6 @@ permalink: /services/
 
 # Services
 
-![](/media/posts/120/dummy-1.jpg)
-
 **Language & Culture Expert**
 
 My business partially includes consultation in language and culture. This includes editing a range of works, from English academic papers to English Language advertisements. It also covers the tours of Tokyo that I give to visitors to Japan. My trilingual abilities enable me to do professional interpreting for English, Spanish and Japanese. I also do voice-over.
